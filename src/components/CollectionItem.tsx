@@ -120,9 +120,7 @@ export default async function CollectionItem({title}:CollectionItemProps) {
               </div>
 
               <div className="mt-10">
-                <h3 className="text-sm font-medium text-gray-900">
-                  Cast
-                </h3>
+             {/*    <h3 className="text-sm font-medium text-gray-900">Details</h3> */}
                 {/* <ul role="list" className="list-disc space-y-2 pl-4 text-sm">
                   {product.highlights.map((highlight) => (
                     <li key={highlight} className="text-gray-400">

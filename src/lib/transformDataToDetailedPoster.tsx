@@ -17,7 +17,7 @@ export const transformDataToDetailedPoster = (record?: AirtableRecord): Poster |
     description: record.fields["Company (English)"]?.[0] || "No company info",
     images: [
       {
-        src: record.fields["Thumbnail image URL"] || "",
+        src: record.fields["Full image URL"] || "",
         alt: record.fields["Title (Arabic)"]?.[0] || "No alternate text",
       },
     ],
