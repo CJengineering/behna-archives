@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { ibm_plex_mono, ibm_plex_sans } from "./fonts";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +19,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${ibm_plex_mono.variable} ${ibm_plex_sans.variable}`}>   <Navbar></Navbar><div className="min-h-[100vh]">
+      {children}
+        </div><Footer/></body>
     </html>
   );
 }

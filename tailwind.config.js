@@ -4,7 +4,13 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        ibmMono: 'var(--font-ibm-plex-mono)',
+        ibmSans: 'var(--font-ibm-plex-sans)',
+
+      },
+    },
   },
   plugins: [],
 }

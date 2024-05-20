@@ -1,27 +1,30 @@
-
-
 import { AirtableRecord, Poster } from "@/interfaces";
 
-
-export const transformDataToDetailedPoster = (record?: AirtableRecord): Poster | null => {
+export const transformDataToDetailedPoster = (
+  record?: AirtableRecord
+): Poster | null => {
   if (!record) {
     return null; // Return null or throw an error, depending on your error handling strategy
   }
- const year = record.fields["Production year"] || "N/A";
+  const year = record.fields["Production year"] || "N/A";
+  const width = record.fields["Width (cm)"] || "N/A";
+  const height = record.fields["Height (cm)"] || "N/A";
   return {
     id: record.fields.ID,
     name: record.fields["Title (English)"]?.[0] || "",
-    href: record.fields["Full image URL"] || "#",
-    year: record.fields["Production year"] || "N/A",
-   
-    description: record.fields["Company (English)"]?.[0] || "No company info",
-    images: [
-      {
-        src: record.fields["Full image URL"] || "",
-        alt: record.fields["Title (Arabic)"]?.[0] || "No alternate text",
-      },
+    imageUrl: record.fields["Full image URL"] || "#",
+    yearProduced: record.fields["Production year"] || "N/A",
+
+    productionCompany: record.fields["Company (English)"]?.[0] || "N/A",
+    breadcrumbs: [
+      { id: 1, name: "Home", href: "/" },
+      { id: 2, name: "Collection", href: "#" },
+      { id: 3, name: "Posters", href: "#"},
+      { id: 4, name: record.fields["Title (English)"]?.[0], href: "#" },
     ],
-    highlights: record.fields["Cast Names"]?.split(",") || [],
-    details: record.fields["Plot Summary"] || "No details available",
+    screen: "N/A",
+    width: width,
+    height: height,
+    imageAlt: record.fields["Title (English)"]?.[0] || "",
   };
 };

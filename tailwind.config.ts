@@ -13,6 +13,11 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      fontFamily: {
+        ibmMono: 'var(--font-ibm-plex-mono)',
+        ibmSans: 'var(--font-ibm-plex-sans)',
+
+      },
     },
   },
   plugins: [],

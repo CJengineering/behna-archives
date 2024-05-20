@@ -1,11 +1,9 @@
 
+import { CollectionItemProps } from "@/interfaces";
 import { getData } from "@/lib/getData";
 import { getRecordByTitle } from "@/lib/getRecordByTitle";
 import { transformDataToDetailedPoster } from "@/lib/transformDataToDetailedPoster";
-import { useState } from "react";
-interface CollectionItemProps {
-    title: string;
-  }
+
 
 const product = {
   name: "The Blue Elephant",
@@ -49,10 +47,11 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default async function CollectionItem({title}:CollectionItemProps) {
+export default async function CollectionItem({slug}:CollectionItemProps) {
     const data = await getData()
-    const posterRaw = getRecordByTitle(data,title)
+    const posterRaw = getRecordByTitle(data,slug)
     const poster = transformDataToDetailedPoster(posterRaw)
+
 
   return (
     <div className="bg-white  ">
@@ -86,7 +85,7 @@ export default async function CollectionItem({title}:CollectionItemProps) {
             ))}
             <li className="text-sm">
               <a
-                href={poster?.images[0].src || "#"}
+                href={ "#"}
                 aria-current="page"
                 className="font-medium text-gray-500 hover:text-gray-600"
               >
@@ -100,7 +99,7 @@ export default async function CollectionItem({title}:CollectionItemProps) {
         <div className="mx-auto mt-16 max-w-7xl sm:px-6 lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8">
           <div className="aspect-w-4 aspect-h-3 col-span-8 overflow-hidden rounded-lg">
             <img
-              src={poster?.images[0].src}
+              src={'poster?.images[0].src'}
               alt={product.images[0].alt}
               className="h-full w-full object-cover object-center"
             />
@@ -115,7 +114,7 @@ export default async function CollectionItem({title}:CollectionItemProps) {
               <h3 className="sr-only">Production</h3>
               <div className="space-y-1">
                 <p className="text-base text-gray-900">{product.description}</p>
-                <p className="text-base text-gray-900">{poster?.year}</p>
+                <p className="text-base text-gray-900">1234</p>
                
               </div>
 

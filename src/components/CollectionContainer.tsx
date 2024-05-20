@@ -14,7 +14,7 @@ export default async function CollectionContainer() {
   const data = await getData();
   const products = transformDataToProducts(data);
   return (
-    <div className="max-w-full mx-auto px-4 py-16 sm:px-6 sm:py-24 lg:max-w-full lg:px-8">
+    <div className="max-w-full mx-auto px-4 md:py-16   lg:max-w-full lg:px-8">
      
 
       <div className="mt-6 flex justify-center">
@@ -24,7 +24,7 @@ export default async function CollectionContainer() {
             .map((product) => (
               <Link
                 key={product.id}
-                href={product.name}
+                href={`posters/${product.slug}`}
                 className="masonry-item group block"
               >
                 <div className="w-full overflow-hidden rounded-lg">

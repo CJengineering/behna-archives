@@ -4,9 +4,9 @@ export const getRecordByTitle = (
   records: AirtableRecord[],
   title: string
 ): AirtableRecord | undefined => {
-  const cleanedTitle = decodeURIComponent(title);
+  const cleanedTitle = title
   return records.find(
-    (record) => record.fields["Title (English)"]?.[0] === cleanedTitle
+    (record) => record.fields["Slug"] === cleanedTitle
   );
 };
 
