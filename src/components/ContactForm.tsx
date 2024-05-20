@@ -5,7 +5,7 @@ export default function ContactForm() {
   return (
     <form className="space-y-8 p-4">
       <div className="border-b border-gray-900/10 pb-12">
-        <h2 className="text-3xl font-semibold leading-7 text-gray-900">Get in Touch</h2>
+        <h2 className="text-3xl font-ibmSans font-semibold leading-7 text-gray-900 plexSans">Get in Touch</h2>
         <p className="mt-1 text-sm leading-6 text-gray-600">
         If you wish to get in touch, please provide details in the form below and submit.
         </p>

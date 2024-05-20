@@ -9,7 +9,7 @@ import Image from "next/image";
 export default async function Contact() {
   return (
     <div>
-      <section className=" ">
+      <section className="plexSans ">
         <div className="relative h-[40vh]">
           <img
             src="https://storage.googleapis.com/behna-archives/00_THUMBNAILS/134_LC_1952_Time%20of%20Wonders_THUMBNAIL.webp"
@@ -18,7 +18,7 @@ export default async function Contact() {
           />
           <div className="absolute inset-0 bg-black opacity-50 z-20"></div>
           <div className="relative flex items-center justify-center h-full z-20">
-            <h1 className="text-white text-center md:w-1/4 text-xl md:text-4xl font-bold font-ibmSans">
+            <h1 className="text-white text-center md:w-1/4 text-xl md:text-4xl font-bold plexSans">
               Contact
             </h1>
           </div>
@@ -39,7 +39,7 @@ export default async function Contact() {
             />
           </div>
         </div>
-        <div className="my-4 border-b border-gray-300"></div>
+
       </section>
      
     </div>

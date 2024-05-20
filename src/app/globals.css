@@ -39,6 +39,12 @@ body {
   height: 94vh;
  
 }
+.plexMono {
+  font-family: var(--font-ibm-plex-mono)
+}
+.plexSans {
+  font-family: var(--font-ibm-plex-sans)
+}
 .custom-link{
   display: flex;
 padding-bottom: 6px;
@@ -62,6 +68,9 @@ border-bottom: 3px solid #0019FF;
     column-count: 2;
   }
   
+}
+form{
+  font-family: var();
 }
 @layer utilities {
   .text-balance {
