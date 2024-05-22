@@ -32,11 +32,11 @@ export default async function CollectionContainer() {
                     className="w-full h-auto object-cover object-center hover:scale-105 transform transition-transform duration-150"
                   />
                 </div>
-                <div className="mt-1 flex justify-between items-center text-base font-medium text-black-900">
+                <div className="mt-1 flex justify-between items-center text-sm font-medium text-black-900 md:text-base">
                   <h3>{product.name}</h3>
                   <p>{product.price}</p>
                 </div>
-                <p className="text-sm italic text-gray-700">
+                <p className="text-xs italic text-gray-700 md:text-sm">
                   {product.description}
                 </p>
               </Link>

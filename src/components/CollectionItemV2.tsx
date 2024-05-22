@@ -66,7 +66,7 @@ async function CollectionItem({ slug }: CollectionItemProps) {
       </div> */}
 
       {/* Image Section */}
-      <div className="w-full">
+      <div className="w-full h-[dvh-80]">
         <img
           src={product?.imageUrl}
           alt={product?.imageAlt}
