@@ -13,10 +13,17 @@ import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import logoBehna from "../../public/svg/BEHNA_LOGO_SVG.svg";
 
 const navigation = [
-  { name: "COLLECTION", href: "/collection/posters" },
+  { name: "COLLECTION", href: "/collection" },
   { name: "ABOUT", href: "/about" },
   { name: "CONTACT", href: "/contact" },
 ];
+const navigationMobile = [
+  { name: "HOME", href: "/" },
+  { name: "COLLECTION", href: "/collection" },
+  { name: "ABOUT", href: "/about" },
+  { name: "CONTACT", href: "/contact" },
+];
+
 
 const Navbar = () => {
   const pathname = usePathname()
@@ -60,7 +67,7 @@ const Navbar = () => {
                   </button>
                 </div>
                 <MenuItems className="flex flex-col items-center space-y-4">
-                  {navigation.map((item) => (
+                  {navigationMobile.map((item) => (
                     <MenuItem key={item.name}>
                       {({ active }) => (
                         <a

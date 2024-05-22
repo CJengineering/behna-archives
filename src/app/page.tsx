@@ -16,9 +16,10 @@ import { ArrowRightIcon } from '@heroicons/react/20/solid'
 import { EyeIcon } from '@heroicons/react/24/outline'
 
 import LogoCommunity from "@/components/LogoCommunity";
+import { getDataMax4 } from "@/lib/getDataMax4";
 
 export default async function Home() {
-  const data = await getData();
+  const data = await getDataMax4();
   const products = transformDataToProducts(data);
   return (
     <div>
@@ -30,14 +31,14 @@ export default async function Home() {
             </h1>
           </div>
         </div>
-        <div className="w-full px-4 md:max-w-[1700px] items-center mx-auto h-[60vh] overflow-hidden py-12">
+        <div className="w-full px-4 md:max-w-[1700px] items-center mx-auto   py-12">
           <div className="masonry-grid" style={{ maxWidth: "100%" }}>
             {products
               .filter((product) => product.imageSrc)
               .map((product) => (
                 <Link
                   key={product.id}
-                  href={`${product.slug}`}
+                  href={`collection/${product.slug}`}
                   className="masonry-item group block"
                 >
                   <div className="w-full overflow-hidden rounded-lg">
@@ -47,13 +48,7 @@ export default async function Home() {
                       className="w-full h-auto object-cover object-center hover:scale-105 transform transition-transform duration-150"
                     />
                   </div>
-                  <div className="mt-1 flex justify-between items-center text-base font-medium text-gray-900">
-                    <h3>{product.name}</h3>
-                    <p>{product.price}</p>
-                  </div>
-                  <p className="text-sm italic text-gray-500">
-                    {product.description}
-                  </p>
+               
                 </Link>
               ))}
           </div>
@@ -61,7 +56,7 @@ export default async function Home() {
       </section>
       <section className=" mx-auto">
         <div className=" py-8 flex justify-center align-middle">
-        <Link href={'/collection/posters'}>
+        <Link href={'/collection'}>
         <button
         type="button"
         className="inline-flex items-center gap-x-2 mt-4 rounded-md plexMono bg-black px-6 py-4 text-sm text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
@@ -112,12 +107,14 @@ export default async function Home() {
   <div className="my-4 px-24 border-b border-gray-300"></div>
 </section>
 <section className="px-4 md:max-w-[1700px] mx-auto pt-4 pb-24 font-ibmMono">
-  <h2 className="font-ibmMono font-semibold">Supported by</h2>
-  <div className="flex flex-col md:flex-row space-x-12">
-    <Image src={cjLogo} alt="" className="py-2 w-48" />
-    <Image src={factumLogo} alt="" className="py-2 w-64" />
-    <Image src={fonazione} alt="" className="py-2 w-52" />
-    <Image src={behnaLogo} alt="" className="py-2 w-36" />
+<h2 className="text-3xl font-bold m-0 text-gray-900 font-ibmSans mb-2">
+        Supported by 
+      </h2>
+  <div className="flex flex-col md:flex-row md:space-x-12">
+    <Image src={cjLogo} alt="" className="py-4 w-48" />
+    <Image src={factumLogo} alt="" className="py-4 w-64" />
+    <Image src={fonazione} alt="" className="py-4 w-52" />
+    <Image src={behnaLogo} alt="" className="py-4 w-36" />
   </div>
 </section>
 

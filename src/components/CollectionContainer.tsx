@@ -22,7 +22,7 @@ export default async function CollectionContainer() {
             .map((product) => (
               <Link
                 key={product.id}
-                href={`posters/${product.slug}`}
+                href={`collection/${product.slug}`}
                 className="masonry-item group block"
               >
                 <div className="w-full overflow-hidden rounded-lg">

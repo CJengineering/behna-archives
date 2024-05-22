@@ -16,11 +16,12 @@ import { transformDataToDetailedPoster } from "@/lib/transformDataToDetailedPost
 import { extractImages } from "@/lib/extractImages";
 
 async function CollectionItem({ slug }: CollectionItemProps) {
-  const data = await getData();
+const data = await getData();
+
   const posterRaw = getRecordByTitle(data, slug);
   const product = transformDataToDetailedPoster(posterRaw);
   const images = product?.productionCompany
-    ? extractImages(data, product?.productionCompany,product?.name)
+    ? extractImages(data, product?.productionCompany, product?.name)
     : [];
 
   return (
@@ -95,16 +96,12 @@ async function CollectionItem({ slug }: CollectionItemProps) {
         </div>
         <div className="text-sm text-gray-500 mt-4 plexMono">
           <p>SCREENED</p>
-          <p className="text-base text-gray-900 plexSans">
-            {product?.screen}
-          </p>
+          <p className="text-base text-gray-900 plexSans">{product?.screen}</p>
         </div>
         {product?.cast && product?.cast.length > 0 ? (
           <div className="text-sm text-gray-500 mt-4 plexMono">
             <p>CAST</p>
-            <p className="text-base text-gray-900 plexSans">
-              {product?.cast}
-            </p>
+            <p className="text-base text-gray-900 plexSans">{product?.cast}</p>
           </div>
         ) : null}
 
@@ -119,18 +116,17 @@ async function CollectionItem({ slug }: CollectionItemProps) {
         </div>
       </div>
       <div className="px-4">
-        { images.length > 0 && (
+        {images.length > 0 && (
           <>
             <div className="my-4 border-b border-gray-300"></div>
 
-<div className="text-sm text-gray-500 mt-4 plexMono">
-  <p>RELATED</p>
-</div>
+            <div className="text-sm text-gray-500 mt-4 plexMono">
+              <p>RELATED</p>
+            </div>
 
-<Caroussel images={images}></Caroussel>
-          </>)}
-      
-
+            <Caroussel images={images}></Caroussel>
+          </>
+        )}
       </div>
     </div>
   );

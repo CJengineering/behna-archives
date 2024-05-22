@@ -18,8 +18,8 @@ export const transformDataToDetailedPoster = (
     productionCompany: record.fields["Company (English)"]?.[0] || "N/A",
     breadcrumbs: [
       { id: 1, name: "Home", href: "/" },
-      { id: 2, name: "Collection", href: "#" },
-      { id: 3, name: "Posters", href: "#"},
+      { id: 2, name: "Collection", href: "/collection" },
+   
       { id: 4, name: record.fields["Title (English)"]?.[0], href: "#" },
     ],
     screen: "N/A",
