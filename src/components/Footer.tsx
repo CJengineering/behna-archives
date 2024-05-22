@@ -18,26 +18,28 @@ const Footer = () => {
   return (
     <footer className={`text-white w-full ${pathname === '/' ? 'bg-slate-900' : 'bg-slate-900'}`}>
       <div className="max-w-full mx-auto px-4 py-6">
-        <div className="flex flex-col md:flex-row justify-between items-center md:space-x-10">
-          <div className="flex justify-start lg:w-0 lg:flex-1 mb-4 md:mb-0">
-            <a href="/" className="flex items-center">
-              <Image src={logoBehna} alt='logo' className="w-6 mr-1 text-white"/>
-              <span className="">BEHNA ARCHIVES</span>
-            </a>
-          </div>
-          <div className="text-center text-sm md:text-base font-medium text-white">
+        <div className="flex flex-col md:flex-row justify-between space-x-10 align-middle">
+        <a href="/" className="flex">
+            <Image src={logoBehna} alt='logo' className="w-6 mr-1 text-white font-ibmSans"/>
+            <span className="px-2 plexMono">BEHNA ARCHIVES</span>
+          </a>
+          <div className="text-center hidden md:block text-xs plexMono content-center text-white uppercase">
             The Behna archives in partnership between Wekalat Behna, Factum Foundation and Fondazione Cini with support from ♥︎ Community Jameel
           </div>
-          <nav className="hidden md:flex space-x-4">
-            {navigation.map((item) => (
+          <nav className="hidden md:flex">
+          {navigation.map((item, index) => (
+            <Fragment key={item.name}>
               <a
-                key={item.name}
                 href={item.href}
-                className="text-base font-medium text-white hover:text-gray-300"
+                className="text-base plexMono text-white hover:text-gray-300 px-2"
               >
                 {item.name}
               </a>
-            ))}
+              {index < navigation.length - 1 && (
+                <span className="text-white px-2">/</span>
+              )}
+            </Fragment>
+          ))}
           </nav>
         </div>
       </div>

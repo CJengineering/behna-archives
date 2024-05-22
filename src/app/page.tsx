@@ -10,9 +10,10 @@ import fonazione from "../../public/svg/FONDAZIONE_CINI.svg";
 import behnaLogo from "../../public/svg/WEKALAT_BEHNA_LOGO.svg";
 import { ReactSVG } from "react-svg";
 import nextLogo from "../../public/next.svg";
-
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowRightIcon } from '@heroicons/react/20/solid'
+import { EyeIcon } from '@heroicons/react/24/outline'
 
 import LogoCommunity from "@/components/LogoCommunity";
 
@@ -21,22 +22,16 @@ export default async function Home() {
   const products = transformDataToProducts(data);
   return (
     <div>
-      <section className=" h-[100vh]  ">
-        <div className="relative h-[40vh]">
-          <img
-            src="https://storage.googleapis.com/behna-archives/00_THUMBNAILS/134_LC_1952_Time%20of%20Wonders_THUMBNAIL.webp"
-            alt="Background Image"
-            className="absolute inset-0 w-full h-full object-cover z-0"
-          />
-          <div className="absolute inset-0 bg-black opacity-50 z-20"></div>
+      <section className="h-[100vh]">
+        <div className="relative h-[40vh] items-center">
           <div className="relative flex items-center justify-center h-full z-20">
-            <h1 className="text-white text-center md:w-1/4 text-xl md:text-4xl font-bold font-ibmSans">
+            <h1 className="text-center text-3xl md:text-5xl text-black font-bold plexSans">
               Preserving Egyptian cinema’s cultural legacy
             </h1>
           </div>
         </div>
-        <div className="  top-[40vh] h-[70vh] left-8 right-8   max-w-[980px]   md:h-[65vh] absolute  md:inset-[40vh] mx-auto z-40 overflow-hidden">
-          <div className="masonry-grid w-full" style={{ maxWidth: "100%" }}>
+        <div className="w-full px-4 md:max-w-[1700px] items-center mx-auto h-[60vh] overflow-hidden py-12">
+          <div className="masonry-grid" style={{ maxWidth: "100%" }}>
             {products
               .filter((product) => product.imageSrc)
               .map((product) => (
@@ -49,14 +44,14 @@ export default async function Home() {
                     <img
                       src={product.imageSrc}
                       alt={product.imageAlt}
-                      className="w-full h-auto object-cover object-center transition-opacity duration-300 ease-in-out group-hover:opacity-75"
+                      className="w-full h-auto object-cover object-center hover:scale-105 transform transition-transform duration-150"
                     />
                   </div>
-                  <div className="mt-4 flex justify-between items-center text-base font-medium text-gray-900">
+                  <div className="mt-1 flex justify-between items-center text-base font-medium text-gray-900">
                     <h3>{product.name}</h3>
                     <p>{product.price}</p>
                   </div>
-                  <p className="mt-1 text-sm italic text-gray-500">
+                  <p className="text-sm italic text-gray-500">
                     {product.description}
                   </p>
                 </Link>
@@ -65,59 +60,68 @@ export default async function Home() {
         </div>
       </section>
       <section className=" mx-auto">
-        <div className=" py-8 flex justify-center align-middle ">
-          <Button text={"Explore"}></Button>
+        <div className=" py-8 flex justify-center align-middle">
+        <Link href={'/collection/posters'}>
+        <button
+        type="button"
+        className="inline-flex items-center gap-x-2 mt-4 rounded-md plexMono bg-black px-6 py-4 text-sm text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+      >
+        Explore
+        <EyeIcon className="-mr-0.5 h-5 w-5" aria-hidden="true" />
+      </button>          
+      
+        </Link>
         </div>
       </section>
-      <section className=" max-w-[980px] mx-auto ">
-        <div className="my-4 border-b border-gray-300"></div>
-        <div className="grid grid-cols-1 px-4 py-8 md:grid-cols-2">
-          <div className="text-colmn">
-            <h2 className="text-3xl font-bold m-0 text-gray-900 font-ibmSans ">
-              What are Behna Archives?
-            </h2>
-            <p className="py-4">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et ullam
-              placeat, ab deleniti porro expedita cumque? Nesciunt, non
-              exercitationem sapiente iste pariatur placeat tempora accusamus
-              optio sed quas quos similique.
-            </p>
-            <p className="py-4">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
-              cumque a, iure architecto molestiae harum dignissimos, suscipit
-              necessitatibus impedit obcaecati recusandae voluptatum esse
-              deserunt magni quam corporis? Est, magnam sit.
-            </p>
-            <p className="py-4">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis
-              ipsum placeat laudantium, nisi, maiores illum tempora fugiat nulla
-              officia dicta a ut consequuntur, libero hic? Atque quaerat esse
-              quas ratione.
-            </p>
-            <div className="w-auto">
-              <Link className="custom-link hover:cursor-pointer w-28 " href={'/about'}>Learn more -{">"}</Link>
-            </div>
-          </div>
+      <section className="max-w-[1700px] mx-auto">
+  <div className="my-4 border-b border-gray-300"></div>
+  <div className="grid grid-cols-1 px-4 py-8 md:grid-cols-2 gap-4">
+    <div className="text-column">
+      <h2 className="text-3xl font-bold m-0 text-gray-900 font-ibmSans">
+        What are Behna Archives?
+      </h2>
+      <p className="py-2">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et ullam placeat, ab deleniti porro expedita cumque? Nesciunt, non exercitationem sapiente iste pariatur placeat tempora accusamus optio sed quas quos similique.
+      </p>
+      <p className="py-2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum cumque a, iure architecto molestiae harum dignissimos, suscipit necessitatibus impedit obcaecati recusandae voluptatum esse deserunt magni quam corporis? Est, magnam sit.
+      </p>
+      <p className="py-2">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis ipsum placeat laudantium, nisi, maiores illum tempora fugiat nulla officia dicta a ut consequuntur, libero hic? Atque quaerat esse quas ratione.
+      </p>
+      <div className="w-auto">
+        <Link href={'/about'}>
+        <button
+        type="button"
+        className="inline-flex items-center gap-x-2 mt-4 rounded-md plexMono bg-black px-6 py-4 text-sm text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+      >
+        Learn more
+        <ArrowRightIcon className="-mr-0.5 h-5 w-5" aria-hidden="true" />
+      </button>          
+        </Link>
+      </div>
+    </div>
+    <div className="column-image hidden md:flex justify-end">
+      <img
+        src="https://storage.googleapis.com/behna-archives/00_THUMBNAILS/37_UAF_1947_Cairo%20Baghdad_THUMBNAIL.webp"
+        alt=""
+        className="self-end"
+      />
+    </div>
+  </div>
+  <div className="my-4 px-24 border-b border-gray-300"></div>
+</section>
+<section className="px-4 md:max-w-[1700px] mx-auto pt-4 pb-24 font-ibmMono">
+  <h2 className="font-ibmMono font-semibold">Supported by</h2>
+  <div className="flex flex-col md:flex-row space-x-12">
+    <Image src={cjLogo} alt="" className="py-2 w-48" />
+    <Image src={factumLogo} alt="" className="py-2 w-64" />
+    <Image src={fonazione} alt="" className="py-2 w-52" />
+    <Image src={behnaLogo} alt="" className="py-2 w-36" />
+  </div>
+</section>
 
-          <div className="column-image hidden md:block">
-            <img
-              src="https://storage.googleapis.com/behna-archives/00_THUMBNAILS/37_UAF_1947_Cairo%20Baghdad_THUMBNAIL.webp"
-              alt=""
-            />
-          </div>
-        </div>
-        <div className="my-4 border-b border-gray-300"></div>
-      </section>
-      <section className=" px-4  md:w-[980px] mx-auto py-4 font-ibmMono">
-        <h2 className="p-2 font-ibmMono font-semibold ">Sorted by</h2>
-        <div className="flex flex-col px-4 md:flex-row space-x-6">
-          <Image src={cjLogo} alt="" className=" py-2 w-48"  />
 
-          <Image src={factumLogo} alt="" className=" py-2 w-48" />
-          <Image src={fonazione} alt="" className="py-2 w-48" />
-          <Image src={behnaLogo} alt="" className="py-2 w-48" />
-        </div>
-      </section>
     </div>
   );
 }

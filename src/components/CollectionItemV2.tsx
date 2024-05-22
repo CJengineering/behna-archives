@@ -25,7 +25,7 @@ async function CollectionItem({ slug }: CollectionItemProps) {
 
   return (
     <div className="bg-white">
-      <div className="w-full bg-gray-100">
+      {/* <div className="w-full bg-gray-100">
         <nav aria-label="Breadcrumb">
           <ol role="list" className="flex items-center px-4 py-2">
             {product?.breadcrumbs &&
@@ -63,7 +63,7 @@ async function CollectionItem({ slug }: CollectionItemProps) {
               )}
           </ol>
         </nav>
-      </div>
+      </div> */}
 
       {/* Image Section */}
       <div className="w-full">
@@ -75,45 +75,45 @@ async function CollectionItem({ slug }: CollectionItemProps) {
       </div>
 
       {/* Title and Details */}
-      <div className="px-4 py-8">
-        <h1 className="text-2xl font-bold text-gray-900 font-ibmSans">
+      <div className="px-4 pt-2 pb-6">
+        <h1 className="text-2xl font-bold text-gray-900 plexSans">
           {product?.name}
         </h1>
         <div className="my-4 border-b border-gray-300"></div>
 
-        <div className="text-sm text-gray-500 mt-4 font-ibmMono">
+        <div className="text-sm text-gray-500 mt-4 plexMono">
           <p>PRODUCTION COMPANY</p>
-          <p className="text-base text-gray-900 font-ibmSans">
+          <p className="text-base text-gray-900 plexSans">
             {product?.productionCompany}
           </p>
         </div>
-        <div className="text-sm text-gray-500 mt-4 font-ibmMono">
+        <div className="text-sm text-gray-500 mt-4 plexMono">
           <p>YEAR PRODUCED</p>
-          <p className="text-base text-gray-900 font-ibmSans">
+          <p className="text-base text-gray-900 plexSans">
             {product?.yearProduced}
           </p>
         </div>
-        <div className="text-sm text-gray-500 mt-4 font-ibmMono">
+        <div className="text-sm text-gray-500 mt-4 plexMono">
           <p>SCREENED</p>
-          <p className="text-base text-gray-900 font-ibmSans">
+          <p className="text-base text-gray-900 plexSans">
             {product?.screen}
           </p>
         </div>
         {product?.cast && product?.cast.length > 0 ? (
-          <div className="text-sm text-gray-500 mt-4 font-ibmMono">
+          <div className="text-sm text-gray-500 mt-4 plexMono">
             <p>CAST</p>
-            <p className="text-base text-gray-900 font-ibmSans">
+            <p className="text-base text-gray-900 plexSans">
               {product?.cast}
             </p>
           </div>
         ) : null}
 
-        <div className="text-sm text-gray-500 mt-4 font-ibmMono">
+        <div className="text-sm text-gray-500 mt-4 plexMono">
           <p>DIMENSIONS</p>
-          <p className="text-base text-gray-900 font-ibmSans">
+          <p className="text-base text-gray-900 fplexSans">
             L {product?.width}cm
           </p>
-          <p className="text-base text-gray-900 font-ibmSans">
+          <p className="text-base text-gray-900 plexSans">
             W {product?.height}cm
           </p>
         </div>
@@ -123,7 +123,7 @@ async function CollectionItem({ slug }: CollectionItemProps) {
           <>
             <div className="my-4 border-b border-gray-300"></div>
 
-<div className="text-sm text-gray-500 mt-4 font-ibmMono">
+<div className="text-sm text-gray-500 mt-4 plexMono">
   <p>RELATED</p>
 </div>
 

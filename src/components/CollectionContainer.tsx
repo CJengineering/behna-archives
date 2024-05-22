@@ -14,9 +14,7 @@ export default async function CollectionContainer() {
   const data = await getData();
   const products = transformDataToProducts(data);
   return (
-    <div className="max-w-full mx-auto px-4 md:py-16   lg:max-w-full lg:px-8">
-     
-
+    <div className="max-w-full mx-auto px-4 md:py-16 lg:max-w-full lg:px-8">
       <div className="mt-6 flex justify-center">
         <div className="masonry-grid w-full" style={{ maxWidth: "100%" }}>
           {products
@@ -31,14 +29,14 @@ export default async function CollectionContainer() {
                   <img
                     src={product.imageSrc}
                     alt={product.imageAlt}
-                    className="w-full h-auto object-cover object-center transition-opacity duration-300 ease-in-out group-hover:opacity-75"
+                    className="w-full h-auto object-cover object-center hover:scale-105 transform transition-transform duration-150"
                   />
                 </div>
-                <div className="mt-4 flex justify-between items-center text-base font-medium text-gray-900">
+                <div className="mt-1 flex justify-between items-center text-base font-medium text-black-900">
                   <h3>{product.name}</h3>
                   <p>{product.price}</p>
                 </div>
-                <p className="mt-1 text-sm italic text-gray-500">
+                <p className="text-sm italic text-gray-700">
                   {product.description}
                 </p>
               </Link>

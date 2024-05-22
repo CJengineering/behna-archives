@@ -38,12 +38,12 @@ async function CollectionItemDesktop({ slug }: CollectionItemProps) {
   );
 
   return (
-    <div className="hidden max-w-[1700px] max-h-[90vh] mx-auto md:grid md:grid-cols-2 md:gap-4">
+    <div className="hidden max-w-[1700px] max-h-[100dvh] mx-auto md:grid md:pb-6 md:grid-cols-2 md:gap-4">
       {/* Image Section */}
-      <div className="poster-container  ">
+      <div className="poster-container">
         <div className=" ">
           <nav aria-label="Breadcrumb">
-            <ol role="list" className="flex items-center  py-6">
+            <ol role="list" className="flex items-center py-6">
               {product?.breadcrumbs &&
                 product.breadcrumbs.map(
                   (
@@ -67,12 +67,12 @@ async function CollectionItemDesktop({ slug }: CollectionItemProps) {
                     <li key={breadcrumb.id} className="flex items-center">
                       <a
                         href={breadcrumb.href}
-                        className="text-sm font-medium text-gray-900"
+                        className="text-sm plexMono text-gray-900"
                       >
                         {breadcrumb.name}
                       </a>
                       {index < product.breadcrumbs.length - 1 && (
-                        <ChevronRightIcon className="w-5 h-5 text-gray-500 mx-2" />
+                        <ChevronRightIcon className="w-5 h-5 text-gray-300 mx-2" />
                       )}
                     </li>
                   )
@@ -82,42 +82,41 @@ async function CollectionItemDesktop({ slug }: CollectionItemProps) {
           <img
             src={product?.imageUrl}
             alt={product?.imageAlt}
-            className="poster "
+            className="poster"
           />
-          <div className="flex space-x-3">
+          <div className="flex py-3 space-x-0">
             <Link
               href={`${links.previous}`}
-              className="h-12 w-12 mr-3 flex justify-start items-center bg-slate-400 text-white"
+              className="h-12 w-12 mr-3 flex justify-center items-center bg-black text-white"
             >
               <ChevronLeftIcon className="h-6 w-6" />
             </Link>
             <Link
               href={`${links.next}`}
-              className="h-12 w-12 flex justify-end items-center bg-slate-400 text-white"
+              className="h-12 w-12 flex justify-center items-center bg-black text-white"
             >
               <ChevronRightIcon className="h-6 w-6" />
             </Link>
           </div>
-          <div className="absolute  bottom-4  "></div>
         </div>
       </div>
 
       {/* Text Section */}
-      <div className="px-4 pt-16 flex flex-col h-[90vh]  ">
-        <h1 className="text-2xl font-bold text-gray-900 font-ibmSans">
+      <div className="px-4 pt-16 flex flex-col h-[100dvh] overflow-y-scroll">
+        <h1 className="text-4xl font-bold text-gray-900 font-ibmSans">
           {product?.name}
         </h1>
         <div className="my-4 border-b border-gray-300"></div>
         <p className="text-sm text-gray-500 font-ibmMono">PRODUCTION COMPANY</p>
-        <p className="text-base text-gray-900 font-ibmSans">
+        <p className="text-base text-gray-900 plexSans mb-4">
           {product?.productionCompany}
         </p>
         <p className="text-sm text-gray-500 font-ibmMono">YEAR PRODUCED</p>
-        <p className="text-base text-gray-900 font-ibmSans">
+        <p className="text-base text-gray-900 plexSans mb-4">
           {product?.yearProduced}
         </p>
         <p className="text-sm text-gray-500 font-ibmMono">SCREENED</p>
-        <p className="text-base text-gray-900 font-ibmSans">
+        <p className="text-base text-gray-900 plexSans mb-4">
           {product?.screen}
         </p>
         {product?.cast && (
@@ -141,8 +140,8 @@ async function CollectionItemDesktop({ slug }: CollectionItemProps) {
                  <div className="my-4 border-b border-gray-300"></div>
 
                  <h3 className="text-sm text-gray-500 font-ibmMono">RELATED</h3>
-                 <div className=" h-[80%] w-full overflow-y-scroll">
-                   <div className="masonry-grid3 w-full" style={{ maxWidth: "100%" }}>
+                 <div className=" h-[80%] w-full">
+                   <div className="masonry-grid3 w-full pb-6" style={{ maxWidth: "100%" }}>
                      {products
                        .filter(
                          (product) =>
