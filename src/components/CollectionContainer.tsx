@@ -33,10 +33,10 @@ export default async function CollectionContainer() {
                   />
                 </div>
                 <div className="mt-1 flex justify-between items-center text-sm font-medium text-black-900 md:text-base">
-                  <h3>{product.name}</h3>
-                  <p>{product.price}</p>
+                  <h3 className="font-ibmSans">{product.name}</h3>
+                  <p className="font-ibmSans">{product.price}</p>
                 </div>
-                <p className="text-xs italic text-gray-700 md:text-sm">
+                <p className="plexMono text-xs text-gray-700 md:text-sm">
                   {product.description}
                 </p>
               </Link>
