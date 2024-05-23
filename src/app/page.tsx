@@ -17,17 +17,19 @@ import { EyeIcon } from "@heroicons/react/24/outline";
 
 import LogoCommunity from "@/components/LogoCommunity";
 import { getDataMax4 } from "@/lib/getDataMax4";
+import { imagesHome } from "@/lib/dataHardCoded/imagesHome";
 
 export default async function Home() {
   const data = await getDataMax4();
 
   const products = transformDataToProducts(data);
+
   return (
     <div>
-      <section className="h-[100vh]">
-        <div className="relative h-[40vh] items-center">
+      <section className="">
+        <div className="relative  items-center">
           <div className="relative flex items-center justify-center h-full z-20">
-            <h1 className="text-center text-3xl md:text-5xl text-black font-bold plexSans">
+            <h1 className="text-center mt-12 text-3xl md:text-5xl text-black font-bold plexSans">
               Preserving Egyptian cinema’s cultural legacy
             </h1>
           </div>
@@ -35,18 +37,18 @@ export default async function Home() {
         <div className="w-full px-4 md:max-w-[1700px] items-center mx-auto   py-12">
           <div className="masonry-grid" style={{ maxWidth: "100%" }}>
             <div className="block md:hidden">
-              {products
-                .filter((product, index) => product.imageSrc && index < 4)
-                .map((product) => (
+              {imagesHome
+                .filter((image, index) => index > 4)
+                .map((image) => (
                   <Link
-                    key={product.id}
-                    href={`collection/${product.slug}`}
+                    key={image.id}
+                    href={`collection/${image.slug}`}
                     className="masonry-item group block"
                   >
                     <div className="w-full overflow-hidden rounded-lg">
                       <img
-                        src={product.imageSrc}
-                        alt={product.imageAlt}
+                        src={image.url}
+                        alt={image.slug}
                         className="w-full h-auto object-cover object-center hover:scale-105 transform transition-transform duration-150"
                       />
                     </div>
@@ -55,18 +57,18 @@ export default async function Home() {
             </div>
 
             <div className="hidden md:block">
-              {products
-                .filter((product) => product.imageSrc)
-                .map((product) => (
+              {imagesHome
+                
+                .map((image) => (
                   <Link
-                    key={product.id}
-                    href={`collection/${product.slug}`}
+                    key={image.id}
+                    href={`collection/${image.slug}`}
                     className="masonry-item group block"
                   >
                     <div className="w-full overflow-hidden rounded-lg">
                       <img
-                        src={product.imageSrc}
-                        alt={product.imageAlt}
+                        src={image.url}
+                        alt={image.slug}
                         className="w-full h-auto object-cover object-center hover:scale-105 transform transition-transform duration-150"
                       />
                     </div>
