@@ -14,7 +14,7 @@ export default async function CollectionContainer() {
   const data = await getData();
   const products = transformDataToProducts(data);
   return (
-    <div className="max-w-full mx-auto px-4 md:py-16 lg:max-w-full lg:px-8">
+    <div className="max-w-full mx-auto px-4 md:pb-16 lg:max-w-full lg:px-8">
       <div className="mt-6 flex justify-center">
         <div className="masonry-grid w-full" style={{ maxWidth: "100%" }}>
           {products

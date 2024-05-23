@@ -61,7 +61,7 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
         ))}
       </div>
       {images.length > 3 && (
-        <div className="flex justify-between w-full pr-4 ">
+        <div className="flex justify-end gap-x-3 w-full pb-3 ">
           <button
             onClick={goToPrev}
             className="p-2 bg-black text-white rounded-l"

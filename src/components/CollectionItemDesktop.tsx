@@ -139,7 +139,7 @@ async function CollectionItemDesktop({ slug }: CollectionItemProps) {
           <>
                  <div className="my-4 border-b border-gray-300"></div>
 
-                 <h3 className="text-sm text-gray-500 font-ibmMono">RELATED</h3>
+                 <h3 className="text-sm text-gray-500 plexMono">RELATED</h3>
                  <div className=" h-[80%] w-full">
                    <div className="masonry-grid3 w-full pb-6" style={{ maxWidth: "100%" }}>
                      {products
@@ -156,17 +156,17 @@ async function CollectionItemDesktop({ slug }: CollectionItemProps) {
                              href={product.slug}
                              className="masonry-item group block"
                            >
-                             <div className="w-full overflow-hidden rounded-lg">
+                             <div className="w-full mt-6 overflow-hidden rounded-lg">
                                <img
                                  src={product.imageSrc}
                                  alt={product.imageAlt}
                                  className="w-full h-auto object-cover object-center transition-opacity duration-300 ease-in-out group-hover:opacity-75"
                                />
-                               <div className="mt-4 flex justify-between items-center text-base font-medium text-gray-900">
+                               <div className="mt-1 flex justify-between items-center text-base font-medium text-gray-900">
                                  <h3>{product.name}</h3>
                                  <p>{product.price}</p>
                                </div>
-                               <p className="mt-1 text-sm italic text-gray-500">
+                               <p className="mb-4 text-xs italic text-gray-700 md:text-sm">
                                  {product.description}
                                </p>
                              </div>

@@ -9,12 +9,11 @@ export default async function Contact() {
   return (
     <div>
       <section className="">
-      <div className="relative h-[20vh] md:h-[40vh] items-center">
-          <div className="absolute inset-0"></div>
-          <div className="relative flex items-center justify-center h-full z-20">
+      <div className="relative py-24 md:py-48 items-center">
+          <div className="relative flex items-center px-12 justify-center h-full z-20">
             <h1 className="text-center text-3xl md:text-5xl text-black font-bold plexSans">
-              Contact
-            </h1>
+              Get in touch
+              </h1>
           </div>
         </div>
        

@@ -27,10 +27,10 @@ export default async function Home() {
   return (
     <div>
       <section className="">
-        <div className="relative  items-center">
-          <div className="relative flex items-center justify-center h-full z-20">
-            <h1 className="text-center my-36 text-3xl md:text-5xl text-black font-bold plexSans">
-              Preserving Egyptian cinema’s cultural legacy
+      <div className="relative py-24 md:py-48 items-center">
+          <div className="relative flex items-center px-12 justify-center h-full z-20">
+            <h1 className="text-center text-3xl md:text-5xl text-black font-bold plexSans">
+              Preserving the cultural legacy of Egyptian cinema
             </h1>
           </div>
         </div>
@@ -85,7 +85,7 @@ export default async function Home() {
               type="button"
               className="inline-flex items-center gap-x-2 mt-4 rounded-md plexMono bg-black px-6 py-4 text-sm text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
             >
-              Explore
+              Explore the Collection
               <EyeIcon className="-mr-0.5 h-5 w-5" aria-hidden="true" />
             </button>
           </Link>

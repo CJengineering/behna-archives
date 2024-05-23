@@ -7,10 +7,10 @@ export default function ContactForm() {
   return (
     <form className="">
       <div className="">
-      <h2 className="text-3xl font-bold mb-4 text-gray-900 font-ibmSans">
+      {/* <h2 className="text-3xl font-bold mb-4 text-gray-900 font-ibmSans">
         Get in touch
-      </h2>
-        <p className="text-sm leading-6 text-gray-600">
+      </h2> */}
+        <p className="text-base leading-6 text-gray-600 plexSans">
         If you wish to get in touch, please provide details in the form below and submit.
         </p>
 
