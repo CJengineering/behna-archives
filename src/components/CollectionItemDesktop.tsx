@@ -160,7 +160,7 @@ async function CollectionItemDesktop({ slug }: CollectionItemProps) {
                                <img
                                  src={product.imageSrc}
                                  alt={product.imageAlt}
-                                 className="w-full h-auto object-cover object-center transition-opacity duration-300 ease-in-out group-hover:opacity-75"
+                                 className="w-full h-auto object-cover object-center hover:scale-105 transform transition-transform duration-150"
                                />
                                <div className="mt-1 flex justify-between items-center text-base font-medium text-gray-900">
                                  <h3>{product.name}</h3>
