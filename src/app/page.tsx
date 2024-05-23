@@ -38,7 +38,7 @@ export default async function Home() {
           <div className="masonry-grid" style={{ maxWidth: "100%" }}>
             <div className="block md:hidden">
               {imagesHome
-                .filter((image, index) => index > 5)
+                .filter((image, index) => index > 3)
                 .map((image) => (
                   <Link
                     key={image.id}
@@ -85,7 +85,7 @@ export default async function Home() {
               type="button"
               className="inline-flex items-center gap-x-2 mt-4 rounded-md plexMono bg-black px-6 py-4 text-sm text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
             >
-              Explore the Collection
+              Explore
               <EyeIcon className="-mr-0.5 h-5 w-5" aria-hidden="true" />
             </button>
           </Link>
