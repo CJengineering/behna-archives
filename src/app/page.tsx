@@ -29,16 +29,16 @@ export default async function Home() {
       <section className="">
         <div className="relative  items-center">
           <div className="relative flex items-center justify-center h-full z-20">
-            <h1 className="text-center mt-12 text-3xl md:text-5xl text-black font-bold plexSans">
+            <h1 className="text-center my-36 text-3xl md:text-5xl text-black font-bold plexSans">
               Preserving Egyptian cinema’s cultural legacy
             </h1>
           </div>
         </div>
-        <div className="w-full px-4 md:max-w-[1700px] items-center mx-auto   py-12">
+        <div className="w-full px-4 md:max-w-[1700px] items-center mx-auto   ">
           <div className="masonry-grid" style={{ maxWidth: "100%" }}>
             <div className="block md:hidden">
               {imagesHome
-                .filter((image, index) => index > 4)
+                .filter((image, index) => index > 5)
                 .map((image) => (
                   <Link
                     key={image.id}
