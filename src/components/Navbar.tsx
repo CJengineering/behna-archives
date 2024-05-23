@@ -35,7 +35,7 @@ const Navbar = () => {
         <div className="flex justify-start lg:w-0 lg:flex-1">
           <a href="/" className="flex">
             <Image src={logoBehna} alt='logo' className="w-6 mr-1 text-white font-ibmSans"/>
-            <span className="px-2 plexMono">BEHNA ARCHIVES</span>
+            <span className="px-2 plexMono">BEHNA DIGITAL ARCHIVES</span>
           </a>
         </div>
         <div className="-mr-2 -my-2 md:hidden">

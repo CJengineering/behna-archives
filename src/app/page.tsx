@@ -98,24 +98,18 @@ export default async function Home() {
             <h2 className="text-3xl font-bold m-0 text-gray-900 font-ibmSans">
               What are Behna Archives?
             </h2>
-            <p className="py-2">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et ullam
-              placeat, ab deleniti porro expedita cumque? Nesciunt, non
-              exercitationem sapiente iste pariatur placeat tempora accusamus
-              optio sed quas quos similique.
-            </p>
-            <p className="py-2">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
-              cumque a, iure architecto molestiae harum dignissimos, suscipit
-              necessitatibus impedit obcaecati recusandae voluptatum esse
-              deserunt magni quam corporis? Est, magnam sit.
-            </p>
-            <p className="py-2">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis
-              ipsum placeat laudantium, nisi, maiores illum tempora fugiat nulla
-              officia dicta a ut consequuntur, libero hic? Atque quaerat esse
-              quas ratione.
-            </p>
+            <p className="py-2 font-ibmSans">
+        Founded by Alexander the Great in 331 BC and developed by the Ptolemaic dynasty, Alexandria was a centre of scholarship, trade, and culture. Its prominence ended in 31 BC when the Romans took over, making it a provincial town. Alexandria saw a revival in the 19th century under governor Muhammad Ali Pasha, regaining its status as the bride of the Mediterranean.
+      </p>
+      <p className="py-2 font-ibmSans">
+        Sélection Behna Films was established in the late 1920s by brothers Michael and George Behna. They produced Egypt&apos;s first musical and animated films before becoming leading distributors in the Arab world (with offices in Alexandria, Cairo, Baghdad, Khartoum, Beirut, and Damascus). They contributed to many iconic Egyptian films, including those featuring Ismail Yassin and Mohamed Fawzy.
+      </p>
+      <p className="py-2 font-ibmSans">
+        Sélection Behna Films closed in 1961 due to nationalisation after the 1952 revolution. In 2012, Basile and Marie-Claude Behna regained access to Wekalet Behna, the agency&apos;s abandoned premises. They restored over 180 metres of archives documenting three decades of film production and distribution.
+      </p>
+      <p className="py-2 font-ibmSans">
+        A collaboration between Wekalet Behna, Community Jameel, and ARCHiVe, the Behna Digital Archive project was launched to digitise and preserve early 20th-century posters. This archive, a testament to the golden age of Egyptian cinema, aims to inspire producers, designers, and film enthusiasts.
+      </p>
             <div className="w-auto">
               <Link href={"/about"}>
                 <button
