@@ -8,7 +8,7 @@ import {
   ReactNode,
   ReactPortal,
 } from "react";
-import { CollectionItemProps } from "@/interfaces";
+import { AirtableRecord, CollectionItemProps } from "@/interfaces";
 import { getData } from "@/lib/getData";
 import { getRecordByTitle } from "@/lib/getRecordByTitle";
 import { transformDataToDetailedPoster } from "@/lib/transformDataToDetailedPoster";
@@ -16,26 +16,36 @@ import { extractImages } from "@/lib/extractImages";
 import { transformDataToProducts } from "@/lib/transformDataToProducts";
 import Link from "next/link";
 import findSurroundingTitles from "@/lib/findSurroundingTitle";
-import { titles } from "@/lib/dataLinks";
+
+export const extractSlugs = (records: AirtableRecord[]): string[] => {
+  return records.map(record => record.fields.Slug).filter(slug => slug != null);
+};
 
 async function CollectionItemDesktop({ slug }: CollectionItemProps) {
   const data = await getData();
-  const posterRaw = getRecordByTitle(data, slug);
+ const titles = extractSlugs(data);
+
+  const posterRaw = await getRecordByTitle(data, slug);
+
   const product = transformDataToDetailedPoster(posterRaw);
+
   const images = product?.productionCompany
     ? extractImages(data, product?.productionCompany, product?.name)
     : [];
   const links = findSurroundingTitles(titles, slug);
-
+ 
   const products = transformDataToProducts(data);
+
   const productionCompany = product?.productionCompany;
   const excludeProductName = product?.name;
   const relatedProducts = products.filter(
     (product) =>
       product.imageSrc &&
+      product.href &&
       product.description === productionCompany &&
       product.name !== excludeProductName
   );
+  console.log(relatedProducts,product);
 
   return (
     <div className="hidden max-w-[1700px] max-h-[100dvh] mx-auto md:grid md:pb-6 md:grid-cols-2 md:gap-4">
@@ -146,6 +156,7 @@ async function CollectionItemDesktop({ slug }: CollectionItemProps) {
                        .filter(
                          (product) =>
                            product.imageSrc &&
+                           product.href &&
                            product.description === productionCompany &&
                            product.name !== excludeProductName
                        )

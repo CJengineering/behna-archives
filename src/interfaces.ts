@@ -19,6 +19,7 @@ export interface AirtableRecord {
 
 export interface AirtableResponse {
   records: AirtableRecord[];
+  offset?: string;
 }
 export interface Breadcrumb {
   id: number;

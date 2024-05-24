@@ -9,8 +9,8 @@ export function extractImages(records: AirtableRecord[], companyName: string, ti
         !record.fields["Title (English)"].includes(titleFilter)
       )
       .map(record => ({
-        url: record.fields["Thumbnail image URL"],
-        alt: record.fields["Title (English)"][0],
-        slug: record.fields["Slug"]
+        url: record.fields["Thumbnail image URL"]|| "",
+        alt: record.fields["Title (English)"]|| "",
+        slug: record.fields["Slug"]|| "",
       }));
 }

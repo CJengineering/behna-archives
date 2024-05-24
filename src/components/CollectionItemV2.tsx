@@ -18,12 +18,12 @@ import { extractImages } from "@/lib/extractImages";
 async function CollectionItem({ slug }: CollectionItemProps) {
 const data = await getData();
 
-  const posterRaw = getRecordByTitle(data, slug);
+  const posterRaw = await getRecordByTitle(data, slug);
   const product = transformDataToDetailedPoster(posterRaw);
   const images = product?.productionCompany
     ? extractImages(data, product?.productionCompany, product?.name)
     : [];
-
+console.log('images',images)
   return (
     <div className="bg-white">
       {/* <div className="w-full bg-gray-100">

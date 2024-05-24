@@ -20,9 +20,7 @@ import { getDataMax4 } from "@/lib/getDataMax4";
 import { imagesHome } from "@/lib/dataHardCoded/imagesHome";
 
 export default async function Home() {
-  const data = await getDataMax4();
-
-  const products = transformDataToProducts(data);
+  
 
   return (
     <div>

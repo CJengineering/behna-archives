@@ -6,7 +6,7 @@ export default function Poster({ params }: { params: { slug: string } }) {
   return (
     <div>
     <div className="md:hidden">
-      <CollectionItemV2 slug={params.slug}></CollectionItemV2>
+    <CollectionItemV2 slug={params.slug}></CollectionItemV2>
     </div>
     <div className="">
       <CollectionItemDesktop slug={params.slug}></CollectionItemDesktop>
