@@ -49,7 +49,7 @@ function classNames(...classes: string[]) {
 
 export default async function CollectionItem({slug}:CollectionItemProps) {
     const data = await getData()
-    const posterRaw = getRecordByTitle(data,slug)
+    const posterRaw = await getRecordByTitle(data,slug)
     const poster = transformDataToDetailedPoster(posterRaw)
 
 
