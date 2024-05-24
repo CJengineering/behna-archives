@@ -7,7 +7,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import logoBehna from "../../public/svg/BEHNA_LOGO_SVG.svg";
 
 const navigation = [
-  { name: "COLLECTION", href: "/collection/posters" },
+  { name: "COLLECTION", href: "/collection" },
   { name: "ABOUT", href: "/about" },
   { name: "CONTACT", href: "/contact" },
 ];

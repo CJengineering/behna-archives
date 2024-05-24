@@ -95,7 +95,7 @@ export default async function Home() {
         <div className="my-4 border-b border-gray-300"></div>
         <div className="grid grid-cols-1 px-4 py-8 md:grid-cols-2 gap-4">
           <div className="text-column">
-            <h2 className="text-3xl font-bold m-0 text-gray-900 font-ibmSans">
+            <h2 className="text-3xl font-bold m-0 text-gray-900 font-ibmSans md:pb-2">
               What are Behna Archives?
             </h2>
             <p className="py-2 font-ibmSans">
@@ -125,13 +125,13 @@ export default async function Home() {
               </Link>
             </div>
           </div>
-          <div className="column-image hidden md:flex justify-end">
-            <img
-              src="https://storage.googleapis.com/behna-archives/00_THUMBNAILS/37_UAF_1947_Cairo%20Baghdad_THUMBNAIL.webp"
-              alt=""
-              className="self-end"
-            />
-          </div>
+          <div className="column-image hidden md:block md:align-top">
+      <img
+        src="https://storage.googleapis.com/behna-archives/3_AAMTFC_1948_A%20girl%20from%20Palestine.webp"
+        alt=""
+        className="self-end"
+      />
+    </div>
         </div>
         <div className="my-4 px-24 border-b border-gray-300"></div>
       </section>
