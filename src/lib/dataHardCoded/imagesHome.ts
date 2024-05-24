@@ -1,8 +1,8 @@
 export const imagesHome = [
   {
     id: 1,
-    slug: "one-thousand-and-one-nights",
-    url: "https://storage.googleapis.com/behna-archives/00_THUMBNAILS/14_EFC_1940_One%20Thousand%20and%20One%20Nights.webp",
+    slug: "shame-on-you",
+    url: "https://storage.googleapis.com/behna-archives/00_THUMBNAILS/35_GS_1954_shame%20on%20you_THUMBNAIL.webp",
   },
   {
     id: 2,
