@@ -35,7 +35,7 @@ const product = {
   description: "New Century Production",
   highlights: [
     "Karim Abdel Aziz as Yehia",
-    "Khaled El Sawy as Shrif Al Kordy",
+    "Khaled El Sawy as Sherif Al Kordy",
     "Nelly Karim as Lobna",
     "Dareen Haddad as Farah",
   ],
