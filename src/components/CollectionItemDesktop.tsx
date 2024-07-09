@@ -173,7 +173,7 @@ async function CollectionItemDesktop({ slug }: CollectionItemProps) {
             {actor.name}
           </p>
         ))}
-           <p className="text-sm text-gray-500 font-ibmMono">WRITERS</p>
+           <p className="text-sm text-gray-500 font-ibmMono">WRITER</p>
         {relatedWritersNames.map((actor) => (
           <p key ={actor.name}className="text-base text-gray-900 font-ibmSans">
             {actor.name}
