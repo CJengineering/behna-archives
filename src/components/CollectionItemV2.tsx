@@ -14,11 +14,16 @@ import { getData } from "@/lib/getData";
 import { getRecordByTitle } from "@/lib/getRecordByTitle";
 import { transformDataToDetailedPoster } from "@/lib/transformDataToDetailedPoster";
 import { extractImages } from "@/lib/extractImages";
+import { filterByMovieId } from "@/lib/filterByMovieId";
 
 async function CollectionItem({ slug }: CollectionItemProps) {
-const data = await getData();
+const data = await getData('Posters');
+
+
+
 
   const posterRaw = await getRecordByTitle(data, slug);
+
   const product = transformDataToDetailedPoster(posterRaw);
   const images = product?.productionCompany
     ? extractImages(data, product?.productionCompany, product?.name)
@@ -76,6 +81,7 @@ console.log('images',images)
       </div>
 
       {/* Title and Details */}
+   
       <div className="px-4 pt-2 pb-6">
         <h1 className="text-2xl font-bold text-gray-900 plexSans">
           {product?.name}
@@ -90,8 +96,9 @@ console.log('images',images)
         </div>
         <div className="text-sm text-gray-500 mt-4 plexMono">
           <p>YEAR PRODUCED</p>
-          <p className="text-base text-gray-900 plexSans">
+          <p className="text-base  text-gray-900 plexSans">
             {product?.yearProduced}
+        
           </p>
         </div>
         <div className="text-sm text-gray-500 mt-4 plexMono">

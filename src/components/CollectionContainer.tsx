@@ -1,4 +1,4 @@
-import React from "react";
+import React, { act } from "react";
 import { getData } from "../lib/getData";
 import { transformDataToProducts } from "../lib/transformDataToProducts";
 import Link from 'next/link'
@@ -11,12 +11,20 @@ function createSlug(text: string) {
   }
 
 export default async function CollectionContainer() {
-  const data = await getData();
+  const data = await getData('Posters');
+  const dataRawActors = await getData('Actors');
+  const dataWriter = await getData('Writers');
+  const dataDirector = await getData('Directors');
   const products = transformDataToProducts(data);
+
+
   return (
     <div className="max-w-full mx-auto px-4 md:pb-16 lg:max-w-full lg:px-8">
       <div className="mt-6 flex justify-center">
         <div className="masonry-grid w-full" style={{ maxWidth: "100%" }}>
+       
+
+       
           {products
             .filter((product) => product.imageSrc)
             .map((product) => (

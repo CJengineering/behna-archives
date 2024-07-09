@@ -9,6 +9,20 @@ export interface Product {
   imageAlt?: string;
 }
 
+
+export interface ArrayProps {
+  id: string;
+  fields: {
+    'Films': string[];
+  };
+}
+
+export interface PropsOfFilterByMovieId {
+  actors: ArrayProps[];
+  movieId: string;
+}
+
+
 export interface AirtableRecord {
   id: string;
   createdTime: string;

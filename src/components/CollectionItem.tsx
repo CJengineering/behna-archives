@@ -1,8 +1,10 @@
 
 import { CollectionItemProps } from "@/interfaces";
+import { filterByMovieId } from "@/lib/filterByMovieId";
 import { getData } from "@/lib/getData";
 import { getRecordByTitle } from "@/lib/getRecordByTitle";
 import { transformDataToDetailedPoster } from "@/lib/transformDataToDetailedPoster";
+import { transformToRelatedNames } from "@/lib/transformToRelatedNames";
 
 
 const product = {
@@ -48,9 +50,32 @@ function classNames(...classes: string[]) {
 }
 
 export default async function CollectionItem({slug}:CollectionItemProps) {
-    const data = await getData()
+    const data = await getData('Posters')
     const posterRaw = await getRecordByTitle(data,slug)
     const poster = transformDataToDetailedPoster(posterRaw)
+
+    const actorsRawData = await getData("Actors");
+    const writersRawData = await getData("Writers");
+    const directorsRawData = await getData("Directors");
+
+  
+
+    const movieId = posterRaw?.fields?.Films?.[0] ?? "";
+  
+    const relatedActors = filterByMovieId(actorsRawData, movieId);
+    const realtedWirter = filterByMovieId(writersRawData, movieId);
+    const relatedDirectors = filterByMovieId(directorsRawData, movieId);
+  
+    const relatedActorsNames = relatedActors.map((item) =>
+      transformToRelatedNames(item)
+    );
+    const relatedDirectorsNames = relatedDirectors.map((item) =>
+      transformToRelatedNames(item)
+    );
+    const relatedWritersNames = realtedWirter.map((item) =>
+      transformToRelatedNames(item)
+    );
+  
 
 
   return (

@@ -1,10 +1,10 @@
 import { AirtableRecord, AirtableResponse } from "@/interfaces";
 
-export const getData = async (): Promise<AirtableRecord[]> => {
+export const getData = async (type:string): Promise<AirtableRecord[]> => {
   let allRecords :any = [];
   let offset;
   const urlBase =
-    "https://api.airtable.com/v0/appZPb0bGSr4922QN/Posters?&view=Grid%20view";
+    `https://api.airtable.com/v0/appZPb0bGSr4922QN/${type}?&view=Grid%20view`;
   const headers = {
     Authorization:
       "Bearer patUv0gZATPbSw2xA.4b1b2eaa3f4099122601e14f54d018f9de2d7fba01693e8eb6a5f7dee3567632",

@@ -8,7 +8,7 @@ import {
   ReactNode,
   ReactPortal,
 } from "react";
-import { AirtableRecord, CollectionItemProps } from "@/interfaces";
+import { AirtableRecord, ArrayProps, CollectionItemProps } from "@/interfaces";
 import { getData } from "@/lib/getData";
 import { getRecordByTitle } from "@/lib/getRecordByTitle";
 import { transformDataToDetailedPoster } from "@/lib/transformDataToDetailedPoster";
@@ -16,16 +16,39 @@ import { extractImages } from "@/lib/extractImages";
 import { transformDataToProducts } from "@/lib/transformDataToProducts";
 import Link from "next/link";
 import findSurroundingTitles from "@/lib/findSurroundingTitle";
+import { filterByMovieId } from "@/lib/filterByMovieId";
+import { transformToRelatedNames } from "@/lib/transformToRelatedNames";
 
 export const extractSlugs = (records: AirtableRecord[]): string[] => {
-  return records.map(record => record.fields.Slug).filter(slug => slug != null);
+  return records
+    .map((record) => record.fields.Slug)
+    .filter((slug) => slug != null);
 };
 
 async function CollectionItemDesktop({ slug }: CollectionItemProps) {
-  const data = await getData();
- const titles = extractSlugs(data);
+  const data = await getData("Posters");
+  const actorsRawData = await getData("Actors");
+  const writersRawData = await getData("Writers");
+  const directorsRawData = await getData("Directors");
+
+  const titles = extractSlugs(data);
 
   const posterRaw = await getRecordByTitle(data, slug);
+  const movieId = posterRaw?.fields?.Films?.[0] ?? "";
+
+  const relatedActors = filterByMovieId(actorsRawData, movieId);
+  const realtedWirter = filterByMovieId(writersRawData, movieId);
+  const relatedDirectors = filterByMovieId(directorsRawData, movieId);
+
+  const relatedActorsNames = relatedActors.map((item) =>
+    transformToRelatedNames(item)
+  );
+  const relatedDirectorsNames = relatedDirectors.map((item) =>
+    transformToRelatedNames(item)
+  );
+  const relatedWritersNames = realtedWirter.map((item) =>
+    transformToRelatedNames(item)
+  );
 
   const product = transformDataToDetailedPoster(posterRaw);
 
@@ -33,7 +56,7 @@ async function CollectionItemDesktop({ slug }: CollectionItemProps) {
     ? extractImages(data, product?.productionCompany, product?.name)
     : [];
   const links = findSurroundingTitles(titles, slug);
- 
+
   const products = transformDataToProducts(data);
 
   const productionCompany = product?.productionCompany;
@@ -45,7 +68,7 @@ async function CollectionItemDesktop({ slug }: CollectionItemProps) {
       product.description === productionCompany &&
       product.name !== excludeProductName
   );
-  console.log(relatedProducts,product);
+  console.log(relatedProducts, product);
 
   return (
     <div className="hidden max-w-[1700px] max-h-[100dvh] mx-auto md:grid md:pb-6 md:grid-cols-2 md:gap-4">
@@ -141,55 +164,74 @@ async function CollectionItemDesktop({ slug }: CollectionItemProps) {
         <p className="text-base text-gray-900 font-ibmSans">
           L {product?.width}cm
         </p>
-        <p className="text-base text-gray-900 font-ibmSans">
+        <p className="text-base text-gray-900 font-ibmSans mb-4">
           W {product?.height}cm
         </p>
+        <p className="text-sm text-gray-500 font-ibmMono">ACTORS</p>
+        {relatedActorsNames.map((actor) => (
+          <p key ={actor.name} className="text-base text-gray-900 font-ibmSans">
+            {actor.name}
+          </p>
+        ))}
+           <p className="text-sm text-gray-500 font-ibmMono">WRITERS</p>
+        {relatedWritersNames.map((actor) => (
+          <p key ={actor.name}className="text-base text-gray-900 font-ibmSans">
+            {actor.name}
+          </p>
+        ))}
+           <p className="text-sm text-gray-500 font-ibmMono">DIRECTORS</p>
+        {relatedDirectorsNames.map((actor) => (
+          <p key ={actor.name} className="text-base text-gray-900 font-ibmSans">
+            {actor.name}
+          </p>
+        ))}
         <>
-        {relatedProducts.length > 0 && (
-          <>
-                 <div className="my-4 border-b border-gray-300"></div>
+          {relatedProducts.length > 0 && (
+            <>
+              <div className="my-4 border-b border-gray-300"></div>
 
-                 <h3 className="text-sm text-gray-500 plexMono">RELATED</h3>
-                 <div className=" h-[80%] w-full">
-                   <div className="masonry-grid3 w-full pb-6" style={{ maxWidth: "100%" }}>
-                     {products
-                       .filter(
-                         (product) =>
-                           product.imageSrc &&
-                           product.href &&
-                           product.description === productionCompany &&
-                           product.name !== excludeProductName
-                       )
-                       .map((product) => (
-                         <div className="block"    key={product.id}>
-                           <Link
-                             key={product.id}
-                             href={product.slug}
-                             className="masonry-item group block"
-                           >
-                             <div className="w-full mt-6 overflow-hidden rounded-lg">
-                               <img
-                                 src={product.imageSrc}
-                                 alt={product.imageAlt}
-                                 className="w-full h-auto object-cover object-center hover:scale-95 transform transition-transform duration-150"
-                               />
-                               <div className="mt-1 flex justify-between items-center text-base font-medium text-gray-900">
-                                 <h3 className="font-ibmSans">{product.name}</h3>
-                                 <p className="font-ibmSans">{product.price}</p>
-                               </div>
-                               <p className="mb-4 text-xs plexMono text-gray-700 md:text-sm">
-                                 {product.description}
-                               </p>
-                             </div>
-                           </Link>
-                         </div>
-                       ))}
-                   </div>
-                 </div>
-                </>
+              <h3 className="text-sm text-gray-500 plexMono">RELATED</h3>
+              <div className=" h-[80%] w-full">
+                <div
+                  className="masonry-grid3 w-full pb-6"
+                  style={{ maxWidth: "100%" }}
+                >
+                  {products
+                    .filter(
+                      (product) =>
+                        product.imageSrc &&
+                        product.href &&
+                        product.description === productionCompany &&
+                        product.name !== excludeProductName
+                    )
+                    .map((product) => (
+                      <div className="block" key={product.id}>
+                        <Link
+                          key={product.id}
+                          href={product.slug}
+                          className="masonry-item group block"
+                        >
+                          <div className="w-full mt-6 overflow-hidden rounded-lg">
+                            <img
+                              src={product.imageSrc}
+                              alt={product.imageAlt}
+                              className="w-full h-auto object-cover object-center hover:scale-95 transform transition-transform duration-150"
+                            />
+                            <div className="mt-1 flex justify-between items-center text-base font-medium text-gray-900">
+                              <h3 className="font-ibmSans">{product.name}</h3>
+                              <p className="font-ibmSans">{product.price}</p>
+                            </div>
+                            <p className="mb-4 text-xs plexMono text-gray-700 md:text-sm">
+                              {product.description}
+                            </p>
+                          </div>
+                        </Link>
+                      </div>
+                    ))}
+                </div>
+              </div>
+            </>
           )}
-     
-   
         </>
       </div>
     </div>
