@@ -140,51 +140,85 @@ async function CollectionItemDesktop({ slug }: CollectionItemProps) {
           {product?.name}
         </h1>
         <div className="my-4 border-b border-gray-300"></div>
-        <p className="text-sm text-gray-500 font-ibmMono">PRODUCTION COMPANY</p>
-        <p className="text-base text-gray-900 plexSans mb-4">
-          {product?.productionCompany}
-        </p>
-        <p className="text-sm text-gray-500 font-ibmMono">YEAR PRODUCED</p>
-        <p className="text-base text-gray-900 plexSans mb-4">
-          {product?.yearProduced}
-        </p>
-        <p className="text-sm text-gray-500 font-ibmMono">SCREENED</p>
-        <p className="text-base text-gray-900 plexSans mb-4">
-          {product?.screen}
-        </p>
-        {product?.cast && (
+        {product?.productionCompany && product?.productionCompany !== "N/A" && (
           <>
-            <p className="text-sm text-gray-500 font-ibmMono">CAST</p>
-            <p className="text-base text-gray-900 font-ibmSans">
-              {product?.cast}
+            <p className="text-sm text-gray-500 font-ibmMono">
+              PRODUCTION COMPANY
+            </p>
+            <p className="text-base text-gray-900 plexSans mb-4">
+              {product?.productionCompany}
             </p>
           </>
         )}
-        <p className="text-sm text-gray-500 font-ibmMono">DIMENSIONS</p>
-        <p className="text-base text-gray-900 font-ibmSans">
-          L {product?.width}cm
-        </p>
-        <p className="text-base text-gray-900 font-ibmSans mb-4">
-          W {product?.height}cm
-        </p>
-        <p className="text-sm text-gray-500 font-ibmMono">ACTORS</p>
-        {relatedActorsNames.map((actor) => (
-          <p key ={actor.name} className="text-base text-gray-900 font-ibmSans">
-            {actor.name}
-          </p>
-        ))}
-           <p className="text-sm text-gray-500 font-ibmMono">WRITER</p>
-        {relatedWritersNames.map((actor) => (
-          <p key ={actor.name}className="text-base text-gray-900 font-ibmSans">
-            {actor.name}
-          </p>
-        ))}
-           <p className="text-sm text-gray-500 font-ibmMono">DIRECTORS</p>
-        {relatedDirectorsNames.map((actor) => (
-          <p key ={actor.name} className="text-base text-gray-900 font-ibmSans">
-            {actor.name}
-          </p>
-        ))}
+        {product?.yearProduced && product?.yearProduced !== "N/A" && (
+          <>
+            <p className="text-sm text-gray-500 font-ibmMono">YEAR PRODUCED</p>
+            <p className="text-base text-gray-900 plexSans mb-4">
+              {product?.yearProduced}
+            </p>
+          </>
+        )}
+        {relatedDirectorsNames.length > 0 && (
+          <div className="py-4">
+            <p className="text-sm text-gray-500 font-ibmMono">DIRECTOR(S)</p>
+            {relatedDirectorsNames.map((actor, index) => (
+              <div
+                key={actor.name}
+                className="text-base text-gray-900 font-ibmSans"
+              >
+                {actor.name}
+                {index < relatedActorsNames.length - 1 ? "," : ""}
+              </div>
+            ))}
+          </div>
+        )}
+        {relatedWritersNames.length > 0 && (
+          <div className="py-4">
+            <p className="text-sm text-gray-500 font-ibmMono">WRITER(S)</p>
+            {relatedWritersNames.map((actor, index) => (
+              <div
+                key={actor.name}
+                className="text-base text-gray-900 font-ibmSans"
+              >
+                {actor.name}
+                {index < relatedActorsNames.length - 1 ? "," : ""}
+              </div>
+            ))}
+          </div>
+        )}
+        {relatedActorsNames.length > 0 && (
+          <div className="py-4">
+            <p className="text-sm text-gray-500 font-ibmMono">ACTOR(S)</p>
+            <div className="flex gap-2">
+              {relatedActorsNames.map((actor, index) => (
+                <div
+                  key={actor.name}
+                  className="text-base text-gray-900 font-ibmSans"
+                >
+                  {actor.name}
+                  {index < relatedActorsNames.length - 1 ? "," : ""}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+        {(product?.width && product?.width !== "N/A") ||
+        (product?.height && product?.height !== "N/A") ? (
+          <>
+            <p className="text-sm text-gray-500 font-ibmMono">DIMENSIONS</p>
+            {product?.width && product?.width !== "N/A" && (
+              <p className="text-base text-gray-900 font-ibmSans">
+                L {product?.width}cm
+              </p>
+            )}
+            {product?.height && product?.height !== "N/A" && (
+              <p className="text-base text-gray-900 font-ibmSans mb-4">
+                W {product?.height}cm
+              </p>
+            )}
+          </>
+        ) : null}
+
         <>
           {relatedProducts.length > 0 && (
             <>
