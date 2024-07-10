@@ -161,43 +161,47 @@ async function CollectionItemDesktop({ slug }: CollectionItemProps) {
         {relatedDirectorsNames.length > 0 && (
           <div className="py-4">
             <p className="text-sm text-gray-500 font-ibmMono">DIRECTOR(S)</p>
-            {relatedDirectorsNames.map((actor, index) => (
-              <div
-                key={actor.name}
-                className="text-base text-gray-900 font-ibmSans"
-              >
-                {actor.name}
-                {index < relatedActorsNames.length - 1 ? "," : ""}
-              </div>
-            ))}
+            <div className="flex flex-wrap">
+              {relatedDirectorsNames.map((actor, index) => (
+                <span
+                  key={actor.name}
+                  className="text-base text-gray-900 font-ibmSans whitespace-nowrap mr-1"
+                >
+                  {actor.name}
+                  {index < relatedActorsNames.length - 1 ? "," : ""}
+                </span>
+              ))}
+            </div>
           </div>
         )}
         {relatedWritersNames.length > 0 && (
           <div className="py-4">
             <p className="text-sm text-gray-500 font-ibmMono">WRITER(S)</p>
-            {relatedWritersNames.map((actor, index) => (
-              <div
-                key={actor.name}
-                className="text-base text-gray-900 font-ibmSans"
-              >
-                {actor.name}
-                {index < relatedActorsNames.length - 1 ? "," : ""}
-              </div>
-            ))}
+            <div className="flex flex-wrap">
+              {relatedWritersNames.map((actor, index) => (
+                <span
+                  key={actor.name}
+                  className="text-base text-gray-900 font-ibmSans whitespace-nowrap mr-1"
+                >
+                  {actor.name}
+                  {index < relatedActorsNames.length - 1 ? "," : ""}
+                </span>
+              ))}
+            </div>
           </div>
         )}
         {relatedActorsNames.length > 0 && (
           <div className="py-4">
             <p className="text-sm text-gray-500 font-ibmMono">ACTOR(S)</p>
-            <div className="flex gap-2">
+            <div className="flex flex-wrap">
               {relatedActorsNames.map((actor, index) => (
-                <div
+                <span
                   key={actor.name}
-                  className="text-base text-gray-900 font-ibmSans"
+                  className="text-base text-gray-900 font-ibmSans whitespace-nowrap mr-1"
                 >
                   {actor.name}
                   {index < relatedActorsNames.length - 1 ? "," : ""}
-                </div>
+                </span>
               ))}
             </div>
           </div>
