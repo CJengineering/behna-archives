@@ -37,7 +37,7 @@ export default async function CollectionContainer() {
                   <img
                     src={product.imageSrc}
                     alt={product.imageAlt}
-                    className="w-full h-auto object-cover object-center hover:scale-105 transform transition-transform duration-150"
+                    className="w-full h-auto object-cover object-center hover:scale-95 transform transition-transform duration-150"
                   />
                 </div>
                 <div className="mt-1 flex justify-between items-center text-sm font-medium text-black-900 md:text-base">
