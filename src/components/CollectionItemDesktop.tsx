@@ -159,7 +159,7 @@ async function CollectionItemDesktop({ slug }: CollectionItemProps) {
           </>
         )}
         {relatedDirectorsNames.length > 0 && (
-          <div className="py-4">
+          <div className="mb-4">
             <p className="text-sm text-gray-500 font-ibmMono">DIRECTOR(S)</p>
             <div className="flex flex-wrap">
               {relatedDirectorsNames.map((actor, index) => (
@@ -175,7 +175,7 @@ async function CollectionItemDesktop({ slug }: CollectionItemProps) {
           </div>
         )}
         {relatedWritersNames.length > 0 && (
-          <div className="py-4">
+          <div className="mb-4">
             <p className="text-sm text-gray-500 font-ibmMono">WRITER(S)</p>
             <div className="flex flex-wrap">
               {relatedWritersNames.map((actor, index) => (
@@ -191,7 +191,7 @@ async function CollectionItemDesktop({ slug }: CollectionItemProps) {
           </div>
         )}
         {relatedActorsNames.length > 0 && (
-          <div className="py-4">
+          <div className="mb-4">
             <p className="text-sm text-gray-500 font-ibmMono">ACTOR(S)</p>
             <div className="flex flex-wrap">
               {relatedActorsNames.map((actor, index) => (

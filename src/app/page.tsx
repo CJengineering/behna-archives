@@ -47,7 +47,7 @@ export default async function Home() {
                       <img
                         src={image.url}
                         alt={image.slug}
-                        className="w-full h-auto object-cover object-center hover:scale-105 transform transition-transform duration-150"
+                        className="w-full h-auto object-cover object-center hover:scale-95 transform transition-transform duration-150"
                       />
                     </div>
                   </Link>
@@ -67,7 +67,7 @@ export default async function Home() {
                       <img
                         src={image.url}
                         alt={image.slug}
-                        className="w-full h-auto object-cover object-center hover:scale-105 transform transition-transform duration-150"
+                        className="w-full h-auto object-cover object-center hover:scale-95 transform transition-transform duration-150"
                       />
                     </div>
                   </Link>
