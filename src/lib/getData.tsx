@@ -8,6 +8,7 @@ export const getData = async (type:string): Promise<AirtableRecord[]> => {
   const headers = {
     Authorization:
       "Bearer patUv0gZATPbSw2xA.4b1b2eaa3f4099122601e14f54d018f9de2d7fba01693e8eb6a5f7dee3567632",
+   
     
       
   };
@@ -16,7 +17,7 @@ export const getData = async (type:string): Promise<AirtableRecord[]> => {
     // Continue fetching until there's no more offset (all pages are fetched)
     do {
       const responseUrl = urlBase + (offset ? `&offset=${offset}` : '');
-      const response = await fetch(responseUrl, { headers });
+      const response = await fetch(responseUrl, {    next: { revalidate: 10 },headers });
       const data: AirtableResponse = await response.json();
 
       if (response.ok) {
