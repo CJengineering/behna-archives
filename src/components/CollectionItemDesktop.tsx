@@ -73,6 +73,7 @@ async function CollectionItemDesktop({ slug }: CollectionItemProps) {
   return (
     <div className="hidden max-w-[1700px] max-h-[100dvh] mx-auto md:grid md:pb-6 md:grid-cols-2 md:gap-4">
       {/* Image Section */}
+
       <div className="poster-container">
         <div className=" ">
           <nav aria-label="Breadcrumb">
@@ -158,6 +159,17 @@ async function CollectionItemDesktop({ slug }: CollectionItemProps) {
             </p>
           </>
         )}
+     {product?.synopsis && product?.synopsis !== "N/A" && (
+          <>
+            
+            <p className="text-sm text-gray-500 font-ibmMono">SYNOPSIS</p>
+            <p className="text-base text-gray-900 plexSans mb-4">
+              {product?.synopsis
+              }
+            </p>
+          </>
+        )}
+
         {relatedDirectorsNames.length > 0 && (
           <div className="mb-4">
             <p className="text-sm text-gray-500 font-ibmMono">DIRECTOR(S)</p>

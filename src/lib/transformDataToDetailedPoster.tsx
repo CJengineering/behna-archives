@@ -23,6 +23,7 @@ export const transformDataToDetailedPoster = (
       { id: 4, name: record.fields["Title (English)"]?.[0], href: "#" },
     ],
     screen: "N/A",
+    synopsis: record.fields["Synopsis (from Films)"][0]["value"]|| "N/A",
     width: width,
     height: height,
     imageAlt: record.fields["Title (English)"]?.[0] || "",
