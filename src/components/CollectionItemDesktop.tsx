@@ -141,16 +141,7 @@ async function CollectionItemDesktop({ slug }: CollectionItemProps) {
           {product?.name}
         </h1>
         <div className="my-4 border-b border-gray-300"></div>
-        {product?.productionCompany && product?.productionCompany !== "N/A" && (
-          <>
-            <p className="text-sm text-gray-500 font-ibmMono">
-              PRODUCTION COMPANY
-            </p>
-            <p className="text-base text-gray-900 plexSans mb-4">
-              {product?.productionCompany}
-            </p>
-          </>
-        )}
+     
         {product?.yearProduced && product?.yearProduced !== "N/A" && (
           <>
             <p className="text-sm text-gray-500 font-ibmMono">YEAR PRODUCED</p>
@@ -217,6 +208,16 @@ async function CollectionItemDesktop({ slug }: CollectionItemProps) {
               ))}
             </div>
           </div>
+        )}
+              {product?.productionCompany && product?.productionCompany !== "N/A" && (
+          <>
+            <p className="text-sm text-gray-500 font-ibmMono">
+              PRODUCTION COMPANY
+            </p>
+            <p className="text-base text-gray-900 plexSans mb-4">
+              {product?.productionCompany}
+            </p>
+          </>
         )}
         {(product?.width && product?.width !== "N/A") ||
         (product?.height && product?.height !== "N/A") ? (
