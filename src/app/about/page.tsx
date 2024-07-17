@@ -65,10 +65,10 @@ export default async function About() {
           Supported by
         </h2>
         <div className="flex flex-col md:flex-row md:space-x-12">
+          <Image src={behnaLogo} alt="" className="py-4 w-36" />
           <Image src={cjLogo} alt="" className="py-4 w-48" />
           <Image src={factumLogo} alt="" className="py-4 w-64" />
           <Image src={fonazione} alt="" className="py-4 w-52" />
-          <Image src={behnaLogo} alt="" className="py-4 w-36" />
         </div>
       </section>
     </div>

@@ -171,7 +171,7 @@ async function CollectionItemDesktop({ slug }: CollectionItemProps) {
                   className="text-base text-gray-900 font-ibmSans whitespace-nowrap mr-1"
                 >
                   {actor.name}
-                  {index < relatedActorsNames.length - 1 ? "," : ""}
+              
                 </span>
               ))}
             </div>
@@ -187,7 +187,7 @@ async function CollectionItemDesktop({ slug }: CollectionItemProps) {
                   className="text-base text-gray-900 font-ibmSans whitespace-nowrap mr-1"
                 >
                   {actor.name}
-                  {index < relatedActorsNames.length - 1 ? "," : ""}
+                
                 </span>
               ))}
             </div>
@@ -203,7 +203,7 @@ async function CollectionItemDesktop({ slug }: CollectionItemProps) {
                   className="text-base text-gray-900 font-ibmSans whitespace-nowrap mr-1"
                 >
                   {actor.name}
-                  {index < relatedActorsNames.length - 1 ? "," : ""}
+                
                 </span>
               ))}
             </div>

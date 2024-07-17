@@ -20,7 +20,7 @@ const Footer = () => {
       <div className="max-w-full mx-auto px-4 py-6">
         <div className="flex flex-col md:flex-row justify-between space-x-10 align-middle">
         <a href="/" className="flex">
-            <Image src={logoBehna} alt='logo' className="w-6 mr-1 text-white font-ibmSans"/>
+         
             <span className="px-2 plexMono">BEHNA DIGITAL ARCHIVES</span>
           </a>
           <div className="text-center hidden md:block text-xs plexMono content-center text-white uppercase">

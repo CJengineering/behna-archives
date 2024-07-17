@@ -34,7 +34,7 @@ const Navbar = () => {
       <div className="flex justify-between items-center py-6 md:justify-start md:space-x-10">
         <div className="flex justify-start lg:w-0 lg:flex-1">
           <a href="/" className="flex">
-            <Image src={logoBehna} alt='logo' className="w-6 mr-1 text-white font-ibmSans"/>
+          
             <span className="px-2 plexMono">BEHNA DIGITAL ARCHIVES</span>
           </a>
         </div>
