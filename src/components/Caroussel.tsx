@@ -4,11 +4,6 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/16/solid";
 import Link from "next/link";
 import React, { useState } from "react";
 
-interface Image {
-  url: string;
-  alt: string;
-  slug: string;
-}
 
 interface CarouselProps {
   images: ImageRelated[];

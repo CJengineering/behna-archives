@@ -15,14 +15,35 @@ import { getRecordByTitle } from "@/lib/getRecordByTitle";
 import { transformDataToDetailedPoster } from "@/lib/transformDataToDetailedPoster";
 import { extractImages } from "@/lib/extractImages";
 import { filterByMovieId } from "@/lib/filterByMovieId";
+import { extractSlugs } from "./CollectionItemDesktop";
+import { transformToRelatedNames } from "@/lib/transformToRelatedNames";
 
 async function CollectionItem({ slug }: CollectionItemProps) {
 const data = await getData('Posters');
+const actorsRawData = await getData("Actors");
+const writersRawData = await getData("Writers");
+const directorsRawData = await getData("Directors");
+
+const titles = extractSlugs(data);
+
+const posterRaw = await getRecordByTitle(data, slug);
+const movieId = posterRaw?.fields?.Films?.[0] ?? "";
+
+const relatedActors = filterByMovieId(actorsRawData, movieId);
+const realtedWirter = filterByMovieId(writersRawData, movieId);
+const relatedDirectors = filterByMovieId(directorsRawData, movieId);
+
+const relatedActorsNames = relatedActors.map((item) =>
+  transformToRelatedNames(item)
+);
+const relatedDirectorsNames = relatedDirectors.map((item) =>
+  transformToRelatedNames(item)
+);
+const relatedWritersNames = realtedWirter.map((item) =>
+  transformToRelatedNames(item)
+);
 
 
-
-
-  const posterRaw = await getRecordByTitle(data, slug);
 
   const product = transformDataToDetailedPoster(posterRaw);
   const images = product?.productionCompany
@@ -88,39 +109,100 @@ console.log('images',images)
         </h1>
         <div className="my-4 border-b border-gray-300"></div>
 
-        <div className="text-sm text-gray-500 mt-4 plexMono">
-          <p>PRODUCTION COMPANY</p>
-          <p className="text-base text-gray-900 plexSans">
-            {product?.productionCompany}
-          </p>
-        </div>
-        <div className="text-sm text-gray-500 mt-4 plexMono">
-          <p>YEAR PRODUCED</p>
-          <p className="text-base  text-gray-900 plexSans">
-            {product?.yearProduced}
-        
-          </p>
-        </div>
-        <div className="text-sm text-gray-500 mt-4 plexMono">
-          <p>SCREENED</p>
-          <p className="text-base text-gray-900 plexSans">{product?.screen}</p>
-        </div>
-        {product?.cast && product?.cast.length > 0 ? (
-          <div className="text-sm text-gray-500 mt-4 plexMono">
-            <p>CAST</p>
-            <p className="text-base text-gray-900 plexSans">{product?.cast}</p>
-          </div>
-        ) : null}
+   
+        {product?.yearProduced && product?.yearProduced !== "N/A" && (
+          <>
+            <p className="text-sm text-gray-500 font-ibmMono">YEAR PRODUCED</p>
+            <p className="text-base text-gray-900 plexSans mb-4">
+              {product?.yearProduced}
+            </p>
+          </>
+        )}
+     {product?.synopsis && product?.synopsis !== "N/A" && (
+          <>
+            
+            <p className="text-sm text-gray-500 font-ibmMono">SYNOPSIS</p>
+            <p className="text-base text-gray-900 plexSans mb-4">
+              {product?.synopsis
+              }
+            </p>
+          </>
+        )}
 
-        <div className="text-sm text-gray-500 mt-4 plexMono">
-          <p>DIMENSIONS</p>
-          <p className="text-base text-gray-900 fplexSans">
-            L {product?.width}cm
-          </p>
-          <p className="text-base text-gray-900 plexSans">
-            W {product?.height}cm
-          </p>
-        </div>
+        {relatedDirectorsNames.length > 0 && (
+          <div className="mb-4">
+            <p className="text-sm text-gray-500 font-ibmMono">DIRECTOR(S)</p>
+            <div className="flex flex-wrap">
+              {relatedDirectorsNames.map((actor, index) => (
+                <span
+                  key={actor.name}
+                  className="text-base text-gray-900 font-ibmSans whitespace-nowrap mr-1"
+                >
+                  {actor.name}
+              
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
+        {relatedWritersNames.length > 0 && (
+          <div className="mb-4">
+            <p className="text-sm text-gray-500 font-ibmMono">WRITER(S)</p>
+            <div className="flex flex-wrap">
+              {relatedWritersNames.map((actor, index) => (
+                <span
+                  key={actor.name}
+                  className="text-base text-gray-900 font-ibmSans whitespace-nowrap mr-1"
+                >
+                  {actor.name}
+                
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
+        {relatedActorsNames.length > 0 && (
+          <div className="mb-4">
+            <p className="text-sm text-gray-500 font-ibmMono">ACTOR(S)</p>
+            <div className="flex flex-wrap">
+              {relatedActorsNames.map((actor, index) => (
+                <span
+                  key={actor.name}
+                  className="text-base text-gray-900 font-ibmSans whitespace-nowrap mr-1"
+                >
+                  {actor.name}
+                
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
+              {product?.productionCompany && product?.productionCompany !== "N/A" && (
+          <>
+            <p className="text-sm text-gray-500 font-ibmMono">
+              PRODUCTION COMPANY
+            </p>
+            <p className="text-base text-gray-900 plexSans mb-4">
+              {product?.productionCompany}
+            </p>
+          </>
+        )}
+        {(product?.width && product?.width !== "N/A") ||
+        (product?.height && product?.height !== "N/A") ? (
+          <>
+            <p className="text-sm text-gray-500 font-ibmMono">DIMENSIONS</p>
+            {product?.width && product?.width !== "N/A" && (
+              <p className="text-base text-gray-900 font-ibmSans">
+                L {product?.width}cm
+              </p>
+            )}
+            {product?.height && product?.height !== "N/A" && (
+              <p className="text-base text-gray-900 font-ibmSans mb-4">
+                W {product?.height}cm
+              </p>
+            )}
+          </>
+        ) : null}
       </div>
       <div className="px-4">
         {images.length > 0 && (
