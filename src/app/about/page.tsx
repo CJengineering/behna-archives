@@ -28,63 +28,63 @@ export default async function About() {
             {/* <h2 className="text-3xl font-bold mb-4 text-gray-900 font-ibmSans">
         What are Behna Archives?
       </h2> */}
-            <p className="py-2 font-ibmSans">
-              Moving images captivated the world in the early 1900s, marking the
-              emergence of cinema as a global cultural phenomenon.
-            </p>
-            <p className="py-2 font-ibmSans">
-              In the 1920s, Alexandria saw the founding of Sélection Behna Films
-              by two brothers, Michael and George Behna, just as the city was
-              becoming a centre for Egypt’s burgeoning film industry. An
-              historic centre of scholarship, trade, and culture since the
-              Ptolemaic dynasty, Alexandria regained its status as the pride of
-              the Mediterranean and a hub for the arts following a cultural
-              renaissance in the 19th century. This thriving trading post,
-              inhabited by a cosmopolitan mosaic of cultures, became a focal
-              point for the emerging film industry.
-            </p>
-            <p className="py-2 font-ibmSans">
-              In 1932, the Behna brothers produced "Onshoudat al-Fouad," the
-              first Egyptian musical film, and in 1936 "Mish Mish Effendi," the
-              first Egyptian animated film, before transitioning to film
-              distribution. They quickly became the main distributors of
-              Egyptian films in the Arab world, with offices in Alexandria,
-              Cairo, Baghdad, Khartoum, Beirut and Damascus. Sélection Behna
-              Films participated in many iconic films in the history of Egyptian
-              cinema, including works by Assia, Marie-Queen, Ahmed Galal, comedy
-              icon Ismail Yassin and composer-actor Mohamed Fawzy.
-            </p>
-            <p className="py-2 font-ibmSans">
-              Following the 1952 revolution and the widespread campaign of
-              nationalisation, Sélection Behna Films was forced to close its
-              doors in 1961. It was only in 2012, after long legal battles, that
-              the heirs to this former cinematic empire, Basile and Marie-Claude
-              Behna, were able to regain access to Wekalet Behna, the
-              Alexandrian premises of the Sélection Behna Films agency.
-            </p>
-            <p className="py-2 font-ibmSans">
-              This 12-room apartment had been abandoned for over 50 years, with
-              the archive plagued by moisture, dust, insects and rodents. For
-              years, Basile and Marie-Claude Behna have researched and even
-              repurchased their family's heritage, gathering more than 180
-              linear metres of archive material, providing daily accounts of
-              film production and distribution activity over more than three
-              decades.
-            </p>
-            <p className="py-2 font-ibmSans">
-              A collaboration between Wekalet Behna, Community Jameel and
-              ARCHiVe (Factum Foundation and Fondazione Giorgio Cini), the Behna
-              Digital Archive began as a digitisation project to preserve
-              Wekalet Behna's treasured early 20th-century poster collection.
-              Today it is a platform dedicated to celebrating and preserving
-              Egyptian cinema history.
-            </p>
-            <p className="py-2 font-ibmSans">
-              The collection offers a rare and precious testimony to the golden
-              era of Egyptian cinema. As an accessible, digital archive, it aims
-              to serve as a tool for film lovers, producers, researchers and
-              graphic designers globally. decades.
-            </p>
+  <p className="py-2 font-ibmSans">
+  Moving images captivated the world in the early 1900s, marking the
+  emergence of cinema as a global cultural phenomenon.
+</p>
+<p className="py-2 font-ibmSans">
+  In the 1920s, Alexandria saw the founding of Sélection Behna Films
+  by two brothers, Michael and George Behna, just as the city was
+  becoming a centre for Egypt’s burgeoning film industry. An
+  historic centre of scholarship, trade, and culture since the
+  Ptolemaic dynasty, Alexandria regained its status as the pride of
+  the Mediterranean and a hub for the arts following a cultural
+  renaissance in the 19th century. This thriving trading post,
+  inhabited by a cosmopolitan mosaic of cultures, became a focal
+  point for the emerging film industry.
+</p>
+<p className="py-2 font-ibmSans">
+  In 1932, the Behna brothers produced &quot;Onshoudat al-Fouad,&quot; the
+  first Egyptian musical film, and in 1936 &quot;Mish Mish Effendi,&quot; the
+  first Egyptian animated film, before transitioning to film
+  distribution. They quickly became the main distributors of
+  Egyptian films in the Arab world, with offices in Alexandria,
+  Cairo, Baghdad, Khartoum, Beirut and Damascus. Sélection Behna
+  Films participated in many iconic films in the history of Egyptian
+  cinema, including works by Assia, Marie-Queen, Ahmed Galal, comedy
+  icon Ismail Yassin and composer-actor Mohamed Fawzy.
+</p>
+<p className="py-2 font-ibmSans">
+  Following the 1952 revolution and the widespread campaign of
+  nationalisation, Sélection Behna Films was forced to close its
+  doors in 1961. It was only in 2012, after long legal battles, that
+  the heirs to this former cinematic empire, Basile and Marie-Claude
+  Behna, were able to regain access to Wekalet Behna, the
+  Alexandrian premises of the Sélection Behna Films agency.
+</p>
+<p className="py-2 font-ibmSans">
+  This 12-room apartment had been abandoned for over 50 years, with
+  the archive plagued by moisture, dust, insects and rodents. For
+  years, Basile and Marie-Claude Behna have researched and even
+  repurchased their family&apos;s heritage, gathering more than 180
+  linear metres of archive material, providing daily accounts of
+  film production and distribution activity over more than three
+  decades.
+</p>
+<p className="py-2 font-ibmSans">
+  A collaboration between Wekalet Behna, Community Jameel and
+  ARCHiVe (Factum Foundation and Fondazione Giorgio Cini), the Behna
+  Digital Archive began as a digitisation project to preserve
+  Wekalet Behna&apos;s treasured early 20th-century poster collection.
+  Today it is a platform dedicated to celebrating and preserving
+  Egyptian cinema history.
+</p>
+<p className="py-2 font-ibmSans">
+  The collection offers a rare and precious testimony to the golden
+  era of Egyptian cinema. As an accessible, digital archive, it aims
+  to serve as a tool for film lovers, producers, researchers and
+  graphic designers globally. decades.
+</p>
 
             <div className="w-auto"></div>
           </div>
