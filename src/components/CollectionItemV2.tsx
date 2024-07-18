@@ -49,6 +49,7 @@ const relatedWritersNames = realtedWirter.map((item) =>
   const images = product?.productionCompany
     ? extractImages(data, product?.productionCompany, product?.name)
     : [];
+    const relatedImages = images.filter((image) => image.url!=='');
 console.log('images',images)
   return (
     <div className="bg-white">
@@ -138,7 +139,7 @@ console.log('images',images)
                   key={actor.name}
                   className="text-base text-gray-900 font-ibmSans whitespace-nowrap mr-1"
                 >
-                  {actor.name}
+                {actor.name}{index < relatedDirectorsNames.length - 1 && ','}
               
                 </span>
               ))}
@@ -154,7 +155,7 @@ console.log('images',images)
                   key={actor.name}
                   className="text-base text-gray-900 font-ibmSans whitespace-nowrap mr-1"
                 >
-                  {actor.name}
+                    {actor.name}{index < relatedWritersNames.length - 1 && ','}
                 
                 </span>
               ))}
@@ -170,7 +171,7 @@ console.log('images',images)
                   key={actor.name}
                   className="text-base text-gray-900 font-ibmSans whitespace-nowrap mr-1"
                 >
-                  {actor.name}
+                    {actor.name}{index < relatedActorsNames.length - 1 && ','}
                 
                 </span>
               ))}
@@ -205,15 +206,16 @@ console.log('images',images)
         ) : null}
       </div>
       <div className="px-4">
-        {images.length > 0 && (
+
+        {relatedImages.length > 0 && (
           <>
             <div className="my-4 border-b border-gray-300"></div>
 
-            <div className="text-sm text-gray-500 mt-4 plexMono">
+            <div className="text-xl font-bold text-gray-900 plexSans">
               <p>RELATED</p>
             </div>
 
-            <Caroussel images={images}></Caroussel>
+            <Caroussel images={relatedImages }></Caroussel>
           </>
         )}
       </div>

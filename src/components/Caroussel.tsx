@@ -4,7 +4,6 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/16/solid";
 import Link from "next/link";
 import React, { useState } from "react";
 
-
 interface CarouselProps {
   images: ImageRelated[];
 }
@@ -52,6 +51,7 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
                   : "w-[150px]"
               }`}
             />
+            <span className="text-sm text-gray-900 plexSans"> {image.alt}</span>
           </Link>
         ))}
       </div>

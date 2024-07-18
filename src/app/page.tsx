@@ -20,12 +20,10 @@ import { getDataMax4 } from "@/lib/getDataMax4";
 import { imagesHome } from "@/lib/dataHardCoded/imagesHome";
 
 export default async function Home() {
-  
-
   return (
     <div>
       <section className="">
-      <div className="relative py-24 md:py-48 items-center">
+        <div className="relative py-24 md:py-48 items-center">
           <div className="relative flex items-center px-12 justify-center h-full z-20">
             <h1 className="text-center text-3xl md:text-5xl text-black font-bold plexSans">
               Preserving the cultural legacy of Egyptian cinema
@@ -54,38 +52,34 @@ export default async function Home() {
                 ))}
             </div>
 
-            <div className="hidden md:block">
-              {imagesHome
-                
-                .map((image) => (
-                  <Link
-                    key={image.id}
-                    href={`collection/${image.slug}`}
-                    className="masonry-item group block"
-                  >
-                    <div className="w-full overflow-hidden rounded-lg">
-                      <img
-                        src={image.url}
-                        alt={image.slug}
-                        className="w-full h-auto object-cover object-center hover:scale-95 transform transition-transform duration-150"
-                      />
-                    </div>
-                  </Link>
-                ))}
+            <div className="hidden  md:block">
+              {imagesHome.map((image) => (
+                <Link
+                  key={image.id}
+                  href={`collection/${image.slug}`}
+                  className="masonry-item group block"
+                >
+                  <div className="w-full overflow-hidden rounded-lg">
+                    <img
+                      src={image.url}
+                      alt={image.slug}
+                      className="w-full h-auto object-cover object-center hover:scale-95 transform transition-transform duration-150"
+                    />
+                  </div>
+                </Link>
+              ))}
             </div>
           </div>
         </div>
       </section>
       <section className=" mx-auto">
         <div className=" py-8 flex justify-center align-middle">
-          <Link href={"/collection"}>
-            <button
-              type="button"
-              className="inline-flex items-center gap-x-2 mt-4 rounded-md plexMono bg-black px-6 py-4 text-sm text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
-            >
-              Explore
-              <EyeIcon className="-mr-0.5 h-5 w-5" aria-hidden="true" />
-            </button>
+          <Link
+            href={"/collection"}
+            className="inline-flex items-center gap-x-2 mt-4 rounded-md plexMono bg-black px-6 py-4 text-sm text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+          >
+            <EyeIcon className="-mr-0.5 h-5 w-5" aria-hidden="true" />
+            <span>Explore</span>
           </Link>
         </div>
       </section>
@@ -97,17 +91,39 @@ export default async function Home() {
               What are Behna Archives?
             </h2>
             <p className="py-2 font-ibmSans">
-        Founded by Alexander the Great in 331 BC and developed by the Ptolemaic dynasty, Alexandria was a centre of scholarship, trade, and culture. Its prominence ended in 31 BC when the Romans took over, making it a provincial town. Alexandria saw a revival in the 19th century under governor Muhammad Ali Pasha, regaining its status as the bride of the Mediterranean.
-      </p>
-      <p className="py-2 font-ibmSans">
-        Sélection Behna Films was established in the late 1920s by brothers Michael and George Behna. They produced Egypt&apos;s first musical and animated films before becoming leading distributors in the Arab world (with offices in Alexandria, Cairo, Baghdad, Khartoum, Beirut, and Damascus). They contributed to many iconic Egyptian films, including those featuring Ismail Yassin and Mohamed Fawzy.
-      </p>
-      <p className="py-2 font-ibmSans">
-        Sélection Behna Films closed in 1961 due to nationalisation after the 1952 revolution. In 2012, Basile and Marie-Claude Behna regained access to Wekalet Behna, the agency&apos;s abandoned premises. They restored over 180 metres of archives documenting three decades of film production and distribution.
-      </p>
-      <p className="py-2 font-ibmSans">
-        A collaboration between Wekalet Behna, Community Jameel, and ARCHiVe, the Behna Digital Archive project was launched to digitise and preserve early 20th-century posters. This archive, a testament to the golden age of Egyptian cinema, aims to inspire producers, designers, and film enthusiasts.
-      </p>
+              In the 1920s, Alexandria saw the founding of Sélection Behna Films
+              by two brothers, Michael and George Behna, just as the city was
+              becoming a centre for Egypt&rsquo;s burgeoning film industry. An
+              historic centre of scholarship, trade, and culture since the
+              Ptolemaic dynasty, Alexandria regained its status as the pride of
+              the Mediterranean and a hub for the arts following a cultural
+              renaissance in the 19th century. This thriving trading post,
+              inhabited by a cosmopolitan mosaic of cultures, became a focal
+              point for the emerging film industry.
+            </p>
+            <p className="hidden md:block py-2 font-ibmSans">
+              Following the 1952 revolution and the widespread campaign of
+              nationalisation, Sélection Behna Films was forced to close its
+              doors in 1961. It was only in 2012, after long legal battles, that
+              the heirs to this former cinematic empire, Basile and Marie-Claude
+              Behna, were able to regain access to Wekalet Behna, the
+              Alexandrian premises of the Sélection Behna Films agency.
+            </p>
+            <p className="py-2 font-ibmSans">
+              A collaboration between Wekalet Behna, Community Jameel and
+              ARCHiVe (Factum Foundation and Fondazione Giorgio Cini), the Behna
+              Digital Archive began as a digitisation project to preserve
+              Wekalet Behna&apos;s treasured early 20th-century poster
+              collection. Today it is a platform dedicated to celebrating and
+              preserving Egyptian cinema history.
+            </p>
+            <p className="py-2 hidden md:block font-ibmSans">
+              The collection offers a rare and precious testimony to the golden
+              era of Egyptian cinema. As an accessible, digital archive, it aims
+              to serve as a tool for film lovers, producers, researchers and
+              graphic designers globally.
+            </p>
+
             <div className="w-auto">
               <Link href={"/about"}>
                 <button
@@ -124,12 +140,12 @@ export default async function Home() {
             </div>
           </div>
           <div className="column-image hidden md:block md:align-top">
-      <img
-        src="https://storage.googleapis.com/behna-archives/3_AAMTFC_1948_A%20girl%20from%20Palestine.webp"
-        alt=""
-        className="self-end"
-      />
-    </div>
+            <img
+              src="https://storage.googleapis.com/behna-archives/3_AAMTFC_1948_A%20girl%20from%20Palestine.webp"
+              alt=""
+              className="self-end"
+            />
+          </div>
         </div>
         <div className="my-4 px-24 border-b border-gray-300"></div>
       </section>
@@ -137,11 +153,11 @@ export default async function Home() {
         <h2 className="text-3xl font-bold m-0 text-gray-900 font-ibmSans mb-2">
           Supported by
         </h2>
-        <div className="flex flex-col md:flex-row md:space-x-12">
+        <div className="flex flex-col justify-center items-center  md:flex-row md:space-x-12">
+          <Image src={behnaLogo} alt="" className="py-4 w-36" />
           <Image src={cjLogo} alt="" className="py-4 w-48" />
           <Image src={factumLogo} alt="" className="py-4 w-64" />
           <Image src={fonazione} alt="" className="py-4 w-52" />
-          <Image src={behnaLogo} alt="" className="py-4 w-36" />
         </div>
       </section>
     </div>

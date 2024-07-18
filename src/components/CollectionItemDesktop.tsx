@@ -170,7 +170,7 @@ async function CollectionItemDesktop({ slug }: CollectionItemProps) {
                   key={actor.name}
                   className="text-base text-gray-900 font-ibmSans whitespace-nowrap mr-1"
                 >
-                  {actor.name}
+                  {actor.name}{index < relatedDirectorsNames.length - 1 && ','}
               
                 </span>
               ))}
@@ -186,7 +186,7 @@ async function CollectionItemDesktop({ slug }: CollectionItemProps) {
                   key={actor.name}
                   className="text-base text-gray-900 font-ibmSans whitespace-nowrap mr-1"
                 >
-                  {actor.name}
+                  {actor.name}{index < relatedWritersNames.length - 1 && ','}
                 
                 </span>
               ))}
@@ -202,7 +202,7 @@ async function CollectionItemDesktop({ slug }: CollectionItemProps) {
                   key={actor.name}
                   className="text-base text-gray-900 font-ibmSans whitespace-nowrap mr-1"
                 >
-                  {actor.name}
+                  {actor.name}{index < relatedActorsNames.length - 1 && ','}
                 
                 </span>
               ))}
@@ -241,7 +241,7 @@ async function CollectionItemDesktop({ slug }: CollectionItemProps) {
             <>
               <div className="my-4 border-b border-gray-300"></div>
 
-              <h3 className="text-sm text-gray-500 plexMono">RELATED</h3>
+              <h3 className="text-2xl font-bold text-gray-900 font-ibmSans">RELATED</h3>
               <div className=" h-[80%] w-full">
                 <div
                   className="masonry-grid3 w-full pb-6"
