@@ -29,7 +29,7 @@ export const getData = async (type:string): Promise<AirtableRecord[]> => {
       }
     } while (offset); // Continue if there's an offset indicating more data
 
-    console.log("All data fetched successfully:", allRecords.length);
+  
     return allRecords; // Return all records fetched
   } catch (error) {
     console.error("Failed to fetch data:", error);
