@@ -1,10 +1,13 @@
 'use client';
 import { useContext, useState, FormEvent } from 'react';
+import { useRouter } from 'next/navigation';
 import { AuthContext } from './auth-provider';
 
 const LoginPage: React.FC = () => {
-  const [password, setPassword] = useState('');
+  const [password, setPassword] = useState<string>('');
+  const [errorMessage, setErrorMessage] = useState<string>('');
   const authContext = useContext(AuthContext);
+  const router = useRouter();
 
   if (!authContext) {
     return null; // or handle the case where context is undefined
@@ -14,13 +17,25 @@ const LoginPage: React.FC = () => {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    login(password);
+    login(password, () => {
+      router.push('/');
+    });
+    // If login is not successful, set the error message and clear the input
+    if (password !== process.env.NEXT_PUBLIC_AUTH_PASSWORD) {
+      setErrorMessage('Incorrect password. Please try again.');
+      setPassword('');
+    }
   };
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="w-full max-w-sm p-6 bg-white rounded-lg shadow-md">
         <h2 className="mb-6 text-2xl font-semibold text-center text-gray-700">Login</h2>
+        {errorMessage && (
+          <div className="mb-4 text-sm text-red-600">
+            {errorMessage}
+          </div>
+        )}
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label className="block mb-2 text-sm font-medium text-gray-600">
@@ -47,3 +62,4 @@ const LoginPage: React.FC = () => {
 };
 
 export default LoginPage;
+

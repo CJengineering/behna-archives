@@ -6,7 +6,7 @@ export function middleware(request: NextRequest) {
 
   if (!specificCookie) {
     console.log('auth-password cookie is missing');
-    return NextResponse.redirect(new URL('/login', request.url));
+    return NextResponse.redirect(new URL('/login?error=missing', request.url));
   }
 
   console.log('auth-password cookie:', specificCookie);
@@ -16,7 +16,7 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   } else {
     console.log('auth-password does not match');
-    return NextResponse.redirect(new URL('/login', request.url));
+    return NextResponse.redirect(new URL('/login?error=incorrect', request.url));
   }
 }
 

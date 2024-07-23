@@ -1,13 +1,11 @@
 'use client';
 import React, { createContext, useState, useEffect, ReactNode } from 'react';
 import Cookies from 'js-cookie';
-import LoginPage from './login';
-
+import { useRouter } from 'next/navigation';
 
 interface AuthContextProps {
   isAuthenticated: boolean;
-  login: (inputPassword: string) => void;
-  logout: () => void;
+  login: (password: string, onSuccess: () => void) => void;
 }
 
 export const AuthContext = createContext<AuthContextProps | undefined>(undefined);
@@ -18,6 +16,7 @@ interface AuthProviderProps {
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     const password = Cookies.get('auth-password');
@@ -26,12 +25,16 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     }
   }, []);
 
-  const login = (inputPassword: string) => {
-    if (inputPassword === process.env.NEXT_PUBLIC_AUTH_PASSWORD) {
-      Cookies.set('auth-password', inputPassword, { expires: 1 });
+  const login = (password: string, onSuccess: () => void) => {
+    // Replace this with your actual password validation logic
+    const isValidPassword = password === process.env.NEXT_PUBLIC_AUTH_PASSWORD;
+
+    if (isValidPassword) {
+      Cookies.set('auth-password', password); // Set the cookie
       setIsAuthenticated(true);
+      onSuccess();
     } else {
-      alert('Incorrect password');
+      setIsAuthenticated(false);
     }
   };
 
@@ -41,8 +44,8 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
-    { children }
+    <AuthContext.Provider value={{ isAuthenticated, login }}>
+      {children}
     </AuthContext.Provider>
   );
 };
