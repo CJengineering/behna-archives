@@ -88,7 +88,7 @@ export default async function Home() {
         <div className="grid grid-cols-1 px-4 py-8 md:grid-cols-2 gap-4">
           <div className="text-column">
             <h2 className="text-3xl font-bold m-0 text-gray-900 font-ibmSans md:pb-2">
-              What are Behna Archives?
+            What are the Behna Digital Archives
             </h2>
             <p className="py-2 font-ibmSans">
               In the 1920s, Alexandria saw the founding of Sélection Behna Films
