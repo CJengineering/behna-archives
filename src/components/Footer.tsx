@@ -24,7 +24,7 @@ const Footer = () => {
             <span className="px-2 plexMono">BEHNA DIGITAL ARCHIVES</span>
           </a>
           <div className="text-center hidden md:block text-xs plexMono content-center text-white uppercase">
-            The Behna Digital Archives in partnership between Wekalat Behna, Factum Foundation and Fondazione Cini with support from ♥︎ Community Jameel
+            The Behna Digital Archives a partnership between Wekalat Behna, Factum Foundation and Fondazione Cini with support from ♥︎ Community Jameel
           </div>
           <nav className="hidden md:flex">
           {navigation.map((item, index) => (
