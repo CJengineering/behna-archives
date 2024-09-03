@@ -95,15 +95,15 @@ export default async function Home() {
               emergence of cinema as a global cultural phenomenon.
             </p>
             <p className="py-2 font-ibmSans">
-              In the 1920s, Alexandria saw the founding of Sélection's Behna
-              Films by three brothers, Edouard, Michel, and George's Behna, just
-              as the city was becoming a centre for Egypt&apos;s burgeoning film
-              industry. An historic centre of scholarship, trade, and culture
-              since the Ptolemaic dynasty, Alexandria regained its status as the
-              pride of the Mediterranean and a hub for the arts following a
-              cultural renaissance in the 19th century. This thriving trading
-              post, inhabited by a cosmopolitan mosaic of cultures, became a
-              focal point for the emerging film industry.
+              In the 1920s, Alexandria saw the founding of Sélection&apos;s
+              Behna Films by three brothers, Edouard, Michel, and George&apos;s
+              Behna, just as the city was becoming a centre for Egypt&apos;s
+              burgeoning film industry. An historic centre of scholarship,
+              trade, and culture since the Ptolemaic dynasty, Alexandria
+              regained its status as the pride of the Mediterranean and a hub
+              for the arts following a cultural renaissance in the 19th century.
+              This thriving trading post, inhabited by a cosmopolitan mosaic of
+              cultures, became a focal point for the emerging film industry.
             </p>
             <p className="hidden md:block py-2 font-ibmSans">
               In 1932, the Behna brothers co-produced &apos;Onshoudat
