@@ -18,6 +18,8 @@ import Link from "next/link";
 import findSurroundingTitles from "@/lib/findSurroundingTitle";
 import { filterByMovieId } from "@/lib/filterByMovieId";
 import { transformToRelatedNames } from "@/lib/transformToRelatedNames";
+import Image from "next/image";
+import MainImageComp from "./MainImageComp";
 
 export const extractSlugs = (records: AirtableRecord[]): string[] => {
   return records
@@ -71,7 +73,7 @@ async function CollectionItemDesktop({ slug }: CollectionItemProps) {
   console.log(relatedProducts, product);
 
   return (
-    <div className="hidden max-w-[1700px] max-h-[100dvh] mx-auto md:grid md:pb-6 md:grid-cols-2 md:gap-4">
+    <div className="hidden max-w-[1700px] max-h-[100dvh] mx-auto md:px-4 md:grid md:pb-6 md:grid-cols-2 md:gap-4">
       {/* Image Section */}
 
       <div className="poster-container">
@@ -113,24 +115,13 @@ async function CollectionItemDesktop({ slug }: CollectionItemProps) {
                 )}
             </ol>
           </nav>
-          <img
-            src={product?.imageUrl}
-            alt={product?.imageAlt}
-            className="poster"
-          />
-          <div className="flex py-3 space-x-0">
-            <Link
-              href={`${links.previous}`}
-              className="h-12 w-12 mr-3 flex justify-center items-center bg-black text-white"
-            >
-              <ChevronLeftIcon className="h-6 w-6" />
-            </Link>
-            <Link
-              href={`${links.next}`}
-              className="h-12 w-12 flex justify-center items-center bg-black text-white"
-            >
-              <ChevronRightIcon className="h-6 w-6" />
-            </Link>
+          <div>
+            <MainImageComp
+              productImage={product?.imageUrl ? product.imageUrl : ""}
+              productAlt={product?.imageAlt ? product.imageAlt : ""}
+              linkPrevious={`${links.previous}`}
+              linkNext={`${links.next}`}
+            />
           </div>
         </div>
       </div>
@@ -141,7 +132,7 @@ async function CollectionItemDesktop({ slug }: CollectionItemProps) {
           {product?.name}
         </h1>
         <div className="my-4 border-b border-gray-300"></div>
-     
+
         {product?.yearProduced && product?.yearProduced !== "N/A" && (
           <>
             <p className="text-sm text-gray-500 font-ibmMono">YEAR PRODUCED</p>
@@ -150,13 +141,11 @@ async function CollectionItemDesktop({ slug }: CollectionItemProps) {
             </p>
           </>
         )}
-     {product?.synopsis && product?.synopsis !== "N/A" && (
+        {product?.synopsis && product?.synopsis !== "N/A" && (
           <>
-            
             <p className="text-sm text-gray-500 font-ibmMono">SYNOPSIS</p>
             <p className="text-base text-gray-900 plexSans mb-4">
-              {product?.synopsis
-              }
+              {product?.synopsis}
             </p>
           </>
         )}
@@ -170,8 +159,8 @@ async function CollectionItemDesktop({ slug }: CollectionItemProps) {
                   key={actor.name}
                   className="text-base text-gray-900 font-ibmSans whitespace-nowrap mr-1"
                 >
-                  {actor.name}{index < relatedDirectorsNames.length - 1 && ','}
-              
+                  {actor.name}
+                  {index < relatedDirectorsNames.length - 1 && ","}
                 </span>
               ))}
             </div>
@@ -186,8 +175,8 @@ async function CollectionItemDesktop({ slug }: CollectionItemProps) {
                   key={actor.name}
                   className="text-base text-gray-900 font-ibmSans whitespace-nowrap mr-1"
                 >
-                  {actor.name}{index < relatedWritersNames.length - 1 && ','}
-                
+                  {actor.name}
+                  {index < relatedWritersNames.length - 1 && ","}
                 </span>
               ))}
             </div>
@@ -202,14 +191,14 @@ async function CollectionItemDesktop({ slug }: CollectionItemProps) {
                   key={actor.name}
                   className="text-base text-gray-900 font-ibmSans whitespace-nowrap mr-1"
                 >
-                  {actor.name}{index < relatedActorsNames.length - 1 && ','}
-                
+                  {actor.name}
+                  {index < relatedActorsNames.length - 1 && ","}
                 </span>
               ))}
             </div>
           </div>
         )}
-              {product?.productionCompany && product?.productionCompany !== "N/A" && (
+        {product?.productionCompany && product?.productionCompany !== "N/A" && (
           <>
             <p className="text-sm text-gray-500 font-ibmMono">
               PRODUCTION COMPANY
@@ -241,7 +230,9 @@ async function CollectionItemDesktop({ slug }: CollectionItemProps) {
             <>
               <div className="my-4 border-b border-gray-300"></div>
 
-              <h3 className="text-2xl font-bold text-gray-900 font-ibmSans">RELATED</h3>
+              <h3 className="text-2xl font-bold text-gray-900 font-ibmSans">
+                RELATED
+              </h3>
               <div className=" h-[80%] w-full">
                 <div
                   className="masonry-grid3 w-full pb-6"

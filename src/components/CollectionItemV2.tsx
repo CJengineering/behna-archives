@@ -17,40 +17,39 @@ import { extractImages } from "@/lib/extractImages";
 import { filterByMovieId } from "@/lib/filterByMovieId";
 import { extractSlugs } from "./CollectionItemDesktop";
 import { transformToRelatedNames } from "@/lib/transformToRelatedNames";
+import Image from "next/image";
 
 async function CollectionItem({ slug }: CollectionItemProps) {
-const data = await getData('Posters');
-const actorsRawData = await getData("Actors");
-const writersRawData = await getData("Writers");
-const directorsRawData = await getData("Directors");
+  const data = await getData("Posters");
+  const actorsRawData = await getData("Actors");
+  const writersRawData = await getData("Writers");
+  const directorsRawData = await getData("Directors");
 
-const titles = extractSlugs(data);
+  const titles = extractSlugs(data);
 
-const posterRaw = await getRecordByTitle(data, slug);
-const movieId = posterRaw?.fields?.Films?.[0] ?? "";
+  const posterRaw = await getRecordByTitle(data, slug);
+  const movieId = posterRaw?.fields?.Films?.[0] ?? "";
 
-const relatedActors = filterByMovieId(actorsRawData, movieId);
-const realtedWirter = filterByMovieId(writersRawData, movieId);
-const relatedDirectors = filterByMovieId(directorsRawData, movieId);
+  const relatedActors = filterByMovieId(actorsRawData, movieId);
+  const realtedWirter = filterByMovieId(writersRawData, movieId);
+  const relatedDirectors = filterByMovieId(directorsRawData, movieId);
 
-const relatedActorsNames = relatedActors.map((item) =>
-  transformToRelatedNames(item)
-);
-const relatedDirectorsNames = relatedDirectors.map((item) =>
-  transformToRelatedNames(item)
-);
-const relatedWritersNames = realtedWirter.map((item) =>
-  transformToRelatedNames(item)
-);
-
-
+  const relatedActorsNames = relatedActors.map((item) =>
+    transformToRelatedNames(item)
+  );
+  const relatedDirectorsNames = relatedDirectors.map((item) =>
+    transformToRelatedNames(item)
+  );
+  const relatedWritersNames = realtedWirter.map((item) =>
+    transformToRelatedNames(item)
+  );
 
   const product = transformDataToDetailedPoster(posterRaw);
   const images = product?.productionCompany
     ? extractImages(data, product?.productionCompany, product?.name)
     : [];
-    const relatedImages = images.filter((image) => image.url!=='');
-console.log('images',images)
+  const relatedImages = images.filter((image) => image.url !== "");
+  console.log("images", images);
   return (
     <div className="bg-white">
       {/* <div className="w-full bg-gray-100">
@@ -95,22 +94,23 @@ console.log('images',images)
 
       {/* Image Section */}
       <div className="w-full h-[dvh-80]">
-        <img
-          src={product?.imageUrl}
-          alt={product?.imageAlt}
+        <Image
+          src={product?.imageUrl ? product.imageUrl : ""}
+          alt={product?.imageAlt ? product.imageAlt : ""}
           className="w-full"
+          width={500}
+          height={500}
         />
       </div>
 
       {/* Title and Details */}
-   
+
       <div className="px-4 pt-2 pb-6">
         <h1 className="text-2xl font-bold text-gray-900 plexSans">
           {product?.name}
         </h1>
         <div className="my-4 border-b border-gray-300"></div>
 
-   
         {product?.yearProduced && product?.yearProduced !== "N/A" && (
           <>
             <p className="text-sm text-gray-500 font-ibmMono">YEAR PRODUCED</p>
@@ -119,13 +119,11 @@ console.log('images',images)
             </p>
           </>
         )}
-     {product?.synopsis && product?.synopsis !== "N/A" && (
+        {product?.synopsis && product?.synopsis !== "N/A" && (
           <>
-            
             <p className="text-sm text-gray-500 font-ibmMono">SYNOPSIS</p>
             <p className="text-base text-gray-900 plexSans mb-4">
-              {product?.synopsis
-              }
+              {product?.synopsis}
             </p>
           </>
         )}
@@ -139,8 +137,8 @@ console.log('images',images)
                   key={actor.name}
                   className="text-base text-gray-900 font-ibmSans whitespace-nowrap mr-1"
                 >
-                {actor.name}{index < relatedDirectorsNames.length - 1 && ','}
-              
+                  {actor.name}
+                  {index < relatedDirectorsNames.length - 1 && ","}
                 </span>
               ))}
             </div>
@@ -155,8 +153,8 @@ console.log('images',images)
                   key={actor.name}
                   className="text-base text-gray-900 font-ibmSans whitespace-nowrap mr-1"
                 >
-                    {actor.name}{index < relatedWritersNames.length - 1 && ','}
-                
+                  {actor.name}
+                  {index < relatedWritersNames.length - 1 && ","}
                 </span>
               ))}
             </div>
@@ -171,14 +169,14 @@ console.log('images',images)
                   key={actor.name}
                   className="text-base text-gray-900 font-ibmSans whitespace-nowrap mr-1"
                 >
-                    {actor.name}{index < relatedActorsNames.length - 1 && ','}
-                
+                  {actor.name}
+                  {index < relatedActorsNames.length - 1 && ","}
                 </span>
               ))}
             </div>
           </div>
         )}
-              {product?.productionCompany && product?.productionCompany !== "N/A" && (
+        {product?.productionCompany && product?.productionCompany !== "N/A" && (
           <>
             <p className="text-sm text-gray-500 font-ibmMono">
               PRODUCTION COMPANY
@@ -206,7 +204,6 @@ console.log('images',images)
         ) : null}
       </div>
       <div className="px-4">
-
         {relatedImages.length > 0 && (
           <>
             <div className="my-4 border-b border-gray-300"></div>
@@ -215,7 +212,7 @@ console.log('images',images)
               <p>RELATED</p>
             </div>
 
-            <Caroussel images={relatedImages }></Caroussel>
+            <Caroussel images={relatedImages}></Caroussel>
           </>
         )}
       </div>

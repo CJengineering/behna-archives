@@ -22,12 +22,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${ibm_plex_mono.variable} ${ibm_plex_sans.variable}`}>
-        {" "}
+    
+        <div className="">
+          
         <Navbar></Navbar>
         <div className="min-h-[100vh]">
           <AuthProvider>{children}</AuthProvider>
         </div>
         <Footer />
+        </div>
       </body>
     </html>
   );

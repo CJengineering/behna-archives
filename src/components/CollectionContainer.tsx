@@ -2,6 +2,7 @@ import React, { act } from "react";
 import { getData } from "../lib/getData";
 import { transformDataToProducts } from "../lib/transformDataToProducts";
 import Link from 'next/link'
+import Image from "next/image";
 function createSlug(text: string) {
     return text
       .toLowerCase() // Convert to lowercase
@@ -34,10 +35,13 @@ export default async function CollectionContainer() {
                 className="masonry-item group block"
               >
                 <div className="w-full overflow-hidden rounded-lg">
-                  <img
+                  <Image
                     src={product.imageSrc}
-                    alt={product.imageAlt}
+                    alt={product.imageAlt ? product.imageAlt : product.name}
                     className="w-full h-auto object-cover object-center hover:scale-95 transform transition-transform duration-150"
+                    width={400}
+                    height={400}
+                 
                   />
                 </div>
                 <div className="mt-1 flex justify-between items-center text-sm font-medium text-black-900 md:text-base">
