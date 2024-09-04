@@ -4,7 +4,7 @@ import React from 'react'
 
 export default function Poster({ params }: { params: { slug: string } }) {
   return (
-    <div>
+    <div className=''>
     <div className="md:hidden">
     <CollectionItemV2 slug={params.slug}></CollectionItemV2>
     </div>
