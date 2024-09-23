@@ -4,7 +4,6 @@ import "./globals.css";
 import { ibm_plex_mono, ibm_plex_sans } from "./fonts";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { AuthProvider } from "@/components/auth-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
