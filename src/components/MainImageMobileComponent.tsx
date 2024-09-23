@@ -30,8 +30,8 @@ export default function MainImageMobileComponent({
         {isLoaded && (
           <Link
             href={`${linkNext}`}
-            className="w-12 opacity-0 transition-opacity duration-200 ease-in-out absolute right-0 bottom-1/2"
-            style={{ opacity: isLoaded ? 0.4 : 0 }}
+            className="w-12 opacity-0 transition-opacity duration-200 ease-in-out absolute right-0 bottom-1/2 pr-3"
+            style={{ opacity: isLoaded ? 1 : 0 }}
           >
             <ChevronRightIcon />
           </Link>
@@ -39,8 +39,8 @@ export default function MainImageMobileComponent({
         {isLoaded && (
           <Link
             href={`${linkPrevious}`}
-            className="w-36 transition-opacity duration-200 ease-in-out opacity-0 absolute left-[-4px] bottom-1/2 flex justify-start"
-            style={{ opacity: isLoaded ? 0.4 : 0 }}
+            className="w-12 transition-opacity duration-200 ease-in-out opacity-0 absolute left-[-4px] bottom-1/2 flex justify-start pl-3"
+            style={{ opacity: isLoaded ? 1 : 0 }}
           >
             <ChevronLeftIcon className="w-12" />
           </Link>
@@ -49,7 +49,7 @@ export default function MainImageMobileComponent({
         <Image
           src={productImage}
           alt={productAlt}
-          className="poster  transition-opacity opacity-0 duration-[1s] ease-in-out"
+          className="poster transition-opacity opacity-0 duration-[1s] ease-in-out"
           onLoad={(e: any) => {
             e.target.classList.remove("opacity-0");
             setIsLoaded(true);
