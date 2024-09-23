@@ -21,13 +21,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+      </head>
       <body className={`${ibm_plex_mono.variable} ${ibm_plex_sans.variable}`}>
     
         <div className="">
           
         <Navbar></Navbar>
         <div className="min-h-[100vh]">
-          <AuthProvider>{children}</AuthProvider>
+          {children}
         </div>
         <Footer />
         </div>

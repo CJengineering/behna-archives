@@ -41,11 +41,11 @@ export default async function Home() {
                     href={`collection/${image.slug}`}
                     className="masonry-item group block"
                   >
-                    <div className="w-full overflow-hidden rounded-lg">
+                    <div className="w-full overflow-hidden ">
                       <img
                         src={image.url}
                         alt={image.slug}
-                        className="w-full h-auto object-cover object-center hover:scale-95 transform transition-transform duration-150"
+                        className="w-full h-auto object-cover object-center "
                       />
                     </div>
                   </Link>
