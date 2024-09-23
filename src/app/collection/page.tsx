@@ -6,7 +6,7 @@ export  default async function page() {
 
   return (
     <div>
-      <div className="relative py-24 md:py-48 items-center">
+      <div className="relative py-12 md:py-48 items-center">
           <div className="relative flex items-center px-12 justify-center h-full z-20">
             <h1 className="text-center text-3xl md:text-5xl text-black font-bold plexSans">
               Collection

@@ -20,7 +20,7 @@ export default async function CollectionContainer() {
 
 
   return (
-    <div className="max-w-full mx-auto px-4 md:pb-16 lg:max-w-full lg:px-8">
+    <div className="max-w-full pb-12 mx-auto px-4 md:pb-16 lg:max-w-full lg:px-8">
       <div className="mt-6 flex justify-center">
         <div className="masonry-grid w-full" style={{ maxWidth: "100%" }}>
        
@@ -34,7 +34,7 @@ export default async function CollectionContainer() {
                 href={`collection/${product.slug}`}
                 className="masonry-item group block"
               >
-                <div className="w-full overflow-hidden rounded-lg">
+                <div className="w-full overflow-hidden ">
                   <Image
                     src={product.imageSrc}
                     alt={product.imageAlt ? product.imageAlt : product.name}
@@ -48,9 +48,9 @@ export default async function CollectionContainer() {
                   <h3 className="font-ibmSans">{product.name}</h3>
                   <p className="font-ibmSans">{product.price}</p>
                 </div>
-                <p className="plexMono text-xs text-gray-700 md:text-sm">
+                {/* <p className="plexMono text-xs text-gray-700 md:text-sm">
                   {product.description}
-                </p>
+                </p> */}
               </Link>
             ))}
         </div>

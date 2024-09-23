@@ -1,4 +1,4 @@
-import { ChevronRightIcon } from "@heroicons/react/16/solid";
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/16/solid";
 import {
   AwaitedReactNode,
   Fragment,
@@ -18,6 +18,8 @@ import { filterByMovieId } from "@/lib/filterByMovieId";
 import { extractSlugs } from "./CollectionItemDesktop";
 import { transformToRelatedNames } from "@/lib/transformToRelatedNames";
 import Image from "next/image";
+import MainImageMobileComponent from "./MainImageMobileComponent";
+import findSurroundingTitles from "@/lib/findSurroundingTitle";
 
 async function CollectionItem({ slug }: CollectionItemProps) {
   const data = await getData("Posters");
@@ -50,6 +52,8 @@ async function CollectionItem({ slug }: CollectionItemProps) {
     : [];
   const relatedImages = images.filter((image) => image.url !== "");
   console.log("images", images);
+
+  const links = findSurroundingTitles(titles, slug);
   return (
     <div className="bg-white">
       {/* <div className="w-full bg-gray-100">
@@ -93,7 +97,13 @@ async function CollectionItem({ slug }: CollectionItemProps) {
       </div> */}
 
       {/* Image Section */}
-      <div className="w-full h-[dvh-80]">
+      {/* <div className="w-full relative p-3 h-[dvh-80] ">
+        <div className="w-12 opacity-40 absolute right-0 bottom-1/2">
+          <ChevronRightIcon />
+        </div>
+        <div className="w-36 opacity-40 absolute left-[-4px]  bottom-1/2 bg-red-50 flex justify-start">
+          <ChevronLeftIcon className="bg-blue-500 w-12 " />
+        </div>
         <Image
           src={product?.imageUrl ? product.imageUrl : ""}
           alt={product?.imageAlt ? product.imageAlt : ""}
@@ -101,7 +111,13 @@ async function CollectionItem({ slug }: CollectionItemProps) {
           width={500}
           height={500}
         />
-      </div>
+      </div> */}
+      <MainImageMobileComponent
+        productImage={product?.imageUrl ? product.imageUrl : ""}
+        productAlt={product?.imageAlt ? product.imageAlt : ""}
+        linkPrevious={`${links.previous}`}
+        linkNext={`${links.next}`}
+      />
 
       {/* Title and Details */}
 

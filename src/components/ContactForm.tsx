@@ -64,7 +64,7 @@ export default function ContactForm() {
           and submit.
         </p>
 
-        <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-2 sm:grid-cols-6">
+        <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-2 sm:grid-cols-6">
           <div className="sm:col-span-3">
             <label
               htmlFor="name"

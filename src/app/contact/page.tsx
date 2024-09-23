@@ -9,7 +9,7 @@ export default async function Contact() {
   return (
     <div>
       <section className="">
-      <div className="relative py-24 md:py-48 items-center">
+      <div className="relative py-12 md:py-48 items-center">
           <div className="relative flex items-center px-12 justify-center h-full z-20">
             <h1 className="text-center text-3xl md:text-5xl text-black font-bold plexSans">
               Get in touch
@@ -20,8 +20,8 @@ export default async function Contact() {
       </section>
       <section className=" max-w-[980px] mx-auto">
       
-        <div className="grid grid-cols-1 px-4 py-8 md:grid-cols-1">
-          <div className="text-colmn">
+        <div className="grid grid-cols-1 px-4  md:grid-cols-1">
+          <div className="text-column">
           <ContactForm></ContactForm>
           </div>
         </div>
