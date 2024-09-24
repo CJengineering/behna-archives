@@ -46,7 +46,7 @@ export const imagesHome = [
   },
   {
     id: 10,
-    slug: "lady-feiruz",
+    slug: "lady-fairuz",
     url: "https://storage.googleapis.com/behna-archives/00_THUMBNAILS/266_UEF_1951_Lady%20Feiruz_THUMBNAIL.webp",
   },
 ];
