@@ -41,8 +41,8 @@ export const imagesHome = [
   },
   {
     id: 9,
-    slug: "beauty-queen",
-    url: "https://storage.googleapis.com/behna-archives/00_THUMBNAILS/134_LC_1952_Time%20of%20Wonders_THUMBNAIL.webp",
+    slug: "a-drop-of-dew",
+    url: "https://storage.googleapis.com/behna-archives/00_THUMBNAILS/277_UF_1951_A%20drop%20of%20dew_THUMBNAIL.webp",
   },
   {
     id: 10,
