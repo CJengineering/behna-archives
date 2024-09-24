@@ -16,14 +16,14 @@ export default async function About() {
       <div className="relative py-12 lg:py-48 items-center">
           <div className="relative flex items-center px-12 justify-center h-full z-20">
             <h1 className="text-center text-3xl md:text-5xl text-black font-bold plexSans">
-              What are the Behna Digital Archives?
+              What is the Behna Cinema Archive?
             </h1>
           </div>
         </div>
       </section>
 
-      <section className=" max-w-[1700px] mx-auto ">
-        <div className="grid grid-cols-1 px-4 pb-8 md:grid-cols-2 md:gap-12 md:align-top">
+      <section className="px-4 max-w-[1700px] mx-auto pb-12">
+        <div className="grid grid-cols-1 pr-4 pl-4 lg:pl-0 md:grid-cols-2 md:gap-12 md:align-top">
           <div className="text-column">
             {/* <h2 className="text-3xl font-bold mb-4 text-gray-900 font-ibmSans">
         What are Behna Archives?
@@ -41,7 +41,7 @@ export default async function About() {
   Following the 1952 revolution and the widespread campaign of nationalisation, Sélections Behna Films was compelled to cease operations in 1961. After prolonged legal battles, the heirs to this former cinematic empire, Basile Behna and his sisters, sought to reclaim the assets of their expropriated company. During this time, Basile Behna, as a prominent art collector who possessed a diverse art collection, embarked on building his own cinema collection that chronicled his family&#8217;s rich heritage. He meticulously acquired pieces from antiquities markets and other collectors to reflect the long and storied history of Sélections Behna Films.
 </p>
 <p className="py-2 font-ibmSans">
-  A collaboration between Wekalet Behna (Basile Behna), Community Jameel and ARCHiVe (Factum Foundation and Fondazione Giorgio Cini), the Behna Digital Archive began as a digitisation project to preserve Wekalet Behna&#8217;s treasured early 20th-century poster collection. Today it is a platform dedicated to celebrating and preserving Egyptian cinema history.
+  A collaboration between Wekalet Behna (Basile Behna), Community Jameel and ARCHiVe (Factum Foundation and Fondazione Giorgio Cini), the Behna Cinema Archive began as a digitisation project to preserve Wekalet Behna&#8217;s treasured early 20th-century poster collection. Today it is a platform dedicated to celebrating and preserving Egyptian cinema history.
 </p>
 <p className="py-2 font-ibmSans">
   The collection offers a rare and precious testimony to the golden era of Egyptian cinema. As an accessible, digital archive, it aims to serve as a tool for film lovers, producers, researchers and graphic designers globally.
@@ -56,17 +56,18 @@ export default async function About() {
             />
           </div>
         </div>
-        <div className="my-4 border-b border-gray-300"></div>
+        <div className="px-24 border-b border-gray-300 py-6"></div>
       </section>
-      <section className=" max-w-[1700px] mx-auto ">
-        <div className="column-image hidden md:block md:align-top">
+      
+      <section className="px-4 md:max-w-[1700px] mx-auto pb-12">
+        <div className="column-image hidden md:block">
             <img
               src="https://storage.googleapis.com/behna-archives/267_GS_1955_For%20the%20Sake%20of%20Love.webp"
               alt=""
               className="self-end"
             />
           </div>
-        <div className="grid grid-cols-1 px-4 pb-8 md:grid-cols-1 md:gap-12 md:align-top">
+        <div className="grid grid-cols-1 md:grid-cols-1 md:gap-12= md:align-top">
           <div className="text-column">
             <h2 className="text-3xl font-bold m-0 text-gray-900 font-ibmSans mb-2">
               <span> Digitising the golden era of Egyptian cinema</span>
@@ -142,18 +143,48 @@ export default async function About() {
           </div>
        
         </div>
-        <div className="my-4 border-b border-gray-300"></div>
+        <div className="border-b border-gray-300 py-6"></div>
       </section>
-      <section className="px-4 md:max-w-[1700px] mx-auto pt-4 pb-24 font-ibmMono">
-        <h2 className="text-3xl font-bold m-0 text-gray-900 font-ibmSans mb-2">
+
+      <section className="px-4 md:max-w-[1700px] mx-auto pb-24 font-ibmMono">
+        <h2 className="text-3xl font-bold m-0 text-gray-900 font-ibmSans mb-4">
           Supported by
         </h2>
-        <div className="flex flex-col justify-center items-center  md:flex-row md:space-x-12">
-          <Image src={behnaLogo} alt="" className="py-4 w-36" />
-          <Image src={cjLogo} alt="" className="py-4 w-48" />
-          <Image src={factumLogo} alt="" className="py-4 w-64" />
-          <Image src={fonazione} alt="" className="py-4 w-52" />
-        </div>
+        <div className="flex flex-col justify-start items-start md:flex-row md:space-x-12">
+  <Link href="https://www.behna.org/en/" target="_blank">
+    <Image 
+      src={behnaLogo} 
+      alt="BEHNA Logo" 
+      className="py-4 w-36 transition-opacity duration-300 hover:opacity-60" 
+    />
+  </Link>
+
+  <Link href="https://www.communityjameel.org/" target="_blank">
+    <Image 
+      src={cjLogo} 
+      alt="Community Jameel Logo" 
+      className="py-4 w-48 transition-opacity duration-300 hover:opacity-60" 
+    />
+  </Link>
+
+  <Link href="https://factumfoundation.org/" target="_blank">
+    <Image 
+      src={factumLogo} 
+      alt="FACTUM Logo" 
+      className="py-4 w-64 transition-opacity duration-300 hover:opacity-60" 
+    />
+  </Link>
+
+  <Link href="https://www.cini.it/" target="_blank">
+    <Image 
+      src={fonazione} 
+      alt="Fonazione Cini Logo" 
+      className="py-4 w-52 transition-opacity duration-300 hover:opacity-60" 
+    />
+  </Link>
+</div>
+
+
       </section>
     </div>
   );

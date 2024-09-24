@@ -253,20 +253,30 @@ async function CollectionItemDesktop({ slug }: CollectionItemProps) {
                           href={product.slug}
                           className="masonry-item group block"
                         >
-                          <div className="w-full mt-6 overflow-hidden rounded-lg">
-                            <img
-                              src={product.imageSrc}
-                              alt={product.imageAlt}
-                              className="w-full h-auto object-cover object-center hover:scale-95 transform transition-transform duration-150"
-                            />
-                            <div className="mt-1 flex justify-between items-center text-base font-medium text-gray-900">
-                              <h3 className="font-ibmSans">{product.name}</h3>
-                              <p className="font-ibmSans">{product.price}</p>
-                            </div>
-                            <p className="mb-4 text-xs plexMono text-gray-700 md:text-sm">
-                              {product.description}
-                            </p>
-                          </div>
+                        <div className="w-full mt-6 overflow-hidden">
+  <div className="relative group w-full h-auto object-cover object-center">
+    <img
+      src={product.imageSrc}
+      alt={product.imageAlt}
+      className="w-full h-auto object-cover object-center transition-all duration-[2000ms] ease-in-out blend-normal group-hover:blend-multiply"
+    />
+
+    {/* Gradient background with slow transition */}
+    <div className="absolute inset-0 bg-blue-900 opacity-0 group-hover:opacity-25 transition-opacity duration-[2000ms] ease-in-out pointer-events-none"></div>
+  </div>
+
+  {/* Text content remains unaffected */}
+  <div className="mt-1 flex justify-between items-center text-base font-medium text-gray-900">
+    <h3 className="font-ibmSans">{product.name}</h3>
+    <p className="font-ibmSans">{product.price}</p>
+  </div>
+
+  <p className="mb-4 text-xs plexMono text-gray-700 md:text-sm">
+    {product.description}
+  </p>
+</div>
+
+
                         </Link>
                       </div>
                     ))}

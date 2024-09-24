@@ -121,11 +121,11 @@ async function CollectionItem({ slug }: CollectionItemProps) {
 
       {/* Title and Details */}
 
-      <div className="px-4 pt-2 pb-6">
+      <div className="px-4 pt-3">
         <h1 className="text-2xl font-bold text-gray-900 plexSans">
           {product?.name}
         </h1>
-        <div className="my-4 border-b border-gray-300"></div>
+        <div className="my-6 border-b border-gray-300"></div>
 
         {product?.yearProduced && product?.yearProduced !== "N/A" && (
           <>
@@ -222,7 +222,7 @@ async function CollectionItem({ slug }: CollectionItemProps) {
       <div className="px-4">
         {relatedImages.length > 0 && (
           <>
-            <div className="my-4 border-b border-gray-300"></div>
+            <div className="my-6 border-b border-gray-300"></div>
 
             <div className="text-xl font-bold text-gray-900 plexSans">
               <p>RELATED</p>

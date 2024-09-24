@@ -51,7 +51,7 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
                   : "w-[150px]"
               }`}
             />
-            <span className="text-sm text-gray-900 plexSans"> {image.alt}</span>
+            <span className="text-sm text-gray-900 plexSans font-semibold"> {image.alt}</span>
           </Link>
         ))}
       </div>

@@ -21,10 +21,10 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between space-x-10 align-middle">
         <a href="/" className="flex">
          
-            <span className="px-2 plexMono">BEHNA DIGITAL ARCHIVES</span>
+            <span className="px-2 plexMono">BEHNA CINEMA ARCHIVE</span>
           </a>
           <div className="text-center hidden md:block text-xs plexMono content-center text-white uppercase">
-            The Behna Digital Archives is a partnership between Wekalat Behna, Factum Foundation and Fondazione Cini with support from ♥︎ Community Jameel
+            The Behna Cinema Archive is a partnership between Wekalat Behna, Factum Foundation and Fondazione Cini with support from ♥︎ Community Jameel
           </div>
           <nav className="hidden md:flex">
           {navigation.map((item, index) => (

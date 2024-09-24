@@ -35,7 +35,7 @@ const Navbar = () => {
         <div className="flex justify-start lg:w-0 lg:flex-1">
           <a href="/" className="flex">
           
-            <span className="px-2 plexMono">BEHNA DIGITAL ARCHIVES</span>
+            <span className="px-2 plexMono">BEHNA CINEMA ARCHIVE</span>
           </a>
         </div>
         <div className="-mr-2 -my-2 md:hidden">

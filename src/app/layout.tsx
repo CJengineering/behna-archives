@@ -8,9 +8,9 @@ import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Behna Digital Archives",
+  title: "The Behna Cinema Archive",
   description:
-    "A collaboration between Wekalet Behna, Community Jameel and ARCHiVe, which is a collaboration between Factum Foundation and Fondazione Giorgio Cini, the Behna Digital Archive is a digitisation project which has led to the launch of an online platform.",
+    "A collaboration between Wekalet Behna, Community Jameel and ARCHiVe, which is a collaboration between Factum Foundation and Fondazione Giorgio Cini, the Behna Cinema Archive is a digitisation project which has led to the launch of an online platform.",
 };
 
 export default function RootLayout({
