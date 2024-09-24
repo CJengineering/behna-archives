@@ -28,24 +28,24 @@ export default async function About() {
             {/* <h2 className="text-3xl font-bold mb-4 text-gray-900 font-ibmSans">
         What are Behna Archives?
       </h2> */}
-            <p className="py-2 font-ibmSans">
-            Moving images captivated the world in the early 1900s, marking the emergence of cinema as a global cultural phenomenon. 
-            </p>
-            <p className="py-2 font-ibmSans">
-            In the 1920s, Alexandria saw the founding of Sélections Behna Films by three brothers, Edouard, Michel and Georges Behna, just as the city was becoming a centre for Egypt’s burgeoning film industry. An historic centre of scholarship, trade, and culture since the Ptolemaic dynasty, Alexandria regained its status as the pride of the Mediterranean and a hub for the arts following a cultural renaissance in the 19th century. This thriving trading post, inhabited by a cosmopolitan mosaic of cultures, became a focal point for the emerging film industry. 
-            </p>
-            <p className="py-2 font-ibmSans">
-            In 1932, the Behna brothers co-produced ‘Onshoudat al-Fouad,’ with Nahas Sphynx Film, the first Egyptian musical film, and in 1936, they launched into film distribution and distributed in the same year the first Egyptian animated film ‘Mish Mish Effendi,’ before transitioning to film distribution. They quickly became the main distributors of Egyptian films in the Arab world, with offices in Alexandria, Cairo, Baghdad, Khartoum, Beirut and Damascus. Sélections Behna Films participated in many iconic films in the history of Egyptian cinema, including works by Assia, Marie-Queen, Ahmed Galal, comedy icon Ismail Yassin and composer-actor Mohamed Fawzy.
-            </p>
-            <p className="py-2 font-ibmSans">
-            Following the 1952 revolution and the widespread campaign of nationalization, Sélections Behna Films was compelled to cease operations in 1961. After prolonged legal battles, the heirs to this former cinematic empire, Basile Behna and his sisters, sought to reclaim the assets of their expropriated company. During this time, Basile Behna, as a prominent art collector who possessed a diverse art collection, embarked on building his own cinema collection that chronicled his family's rich heritage. He meticulously acquired pieces from antiquities markets and other collectors to reflect the long and storied history of Sélections Behna Films.
-            </p>
-            <p className="py-2 font-ibmSans">
-            A collaboration between Wekalet Behna (Basile Behna), Community Jameel and ARCHiVe (Factum Foundation and Fondazione Giorgio Cini), the Behna Digital Archive began as a digitisation project to preserve Wekalet Behna's treasured early 20th-century poster collection. Today it is a platform dedicated to celebrating and preserving Egyptian cinema history.
-            </p>
-            <p className="py-2 font-ibmSans">
-            The collection offers a rare and precious testimony to the golden era of Egyptian cinema. As an accessible, digital archive, it aims to serve as a tool for film lovers, producers, researchers and graphic designers globally.
-            </p>
+<p className="py-2 font-ibmSans">
+  Moving images captivated the world in the early 1900s, marking the emergence of cinema as a global cultural phenomenon.
+</p>
+<p className="py-2 font-ibmSans">
+  In the 1920s, Alexandria saw the founding of Sélections Behna Films by three brothers, Edouard, Michel and Georges Behna, just as the city was becoming a centre for Egypt&#8217;s burgeoning film industry. An historic centre of scholarship, trade, and culture since the Ptolemaic dynasty, Alexandria regained its status as the pride of the Mediterranean and a hub for the arts following a cultural renaissance in the 19th century. This thriving trading post, inhabited by a cosmopolitan mosaic of cultures, became a focal point for the emerging film industry.
+</p>
+<p className="py-2 font-ibmSans">
+  In 1932, the Behna brothers co-produced &#8216;Onshoudat al-Fouad&#8217;, with Nahas Sphynx Film, the first Egyptian musical film, and in 1936, they launched into film distribution and distributed in the same year the first Egyptian animated film &#8216;Mish Mish Effendi,&#8217; before transitioning to film distribution. They quickly became the main distributors of Egyptian films in the Arab world, with offices in Alexandria, Cairo, Baghdad, Khartoum, Beirut and Damascus. Sélections Behna Films participated in many iconic films in the history of Egyptian cinema, including works by Assia, Marie-Queen, Ahmed Galal, comedy icon Ismail Yassin and composer-actor Mohamed Fawzy.
+</p>
+<p className="py-2 font-ibmSans">
+  Following the 1952 revolution and the widespread campaign of nationalisation, Sélections Behna Films was compelled to cease operations in 1961. After prolonged legal battles, the heirs to this former cinematic empire, Basile Behna and his sisters, sought to reclaim the assets of their expropriated company. During this time, Basile Behna, as a prominent art collector who possessed a diverse art collection, embarked on building his own cinema collection that chronicled his family&#8217;s rich heritage. He meticulously acquired pieces from antiquities markets and other collectors to reflect the long and storied history of Sélections Behna Films.
+</p>
+<p className="py-2 font-ibmSans">
+  A collaboration between Wekalet Behna (Basile Behna), Community Jameel and ARCHiVe (Factum Foundation and Fondazione Giorgio Cini), the Behna Digital Archive began as a digitisation project to preserve Wekalet Behna&#8217;s treasured early 20th-century poster collection. Today it is a platform dedicated to celebrating and preserving Egyptian cinema history.
+</p>
+<p className="py-2 font-ibmSans">
+  The collection offers a rare and precious testimony to the golden era of Egyptian cinema. As an accessible, digital archive, it aims to serve as a tool for film lovers, producers, researchers and graphic designers globally.
+</p>
             <div className="w-auto"></div>
           </div>
           <div className="column-image hidden md:block md:align-top">
