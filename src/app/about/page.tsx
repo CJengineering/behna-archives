@@ -15,9 +15,16 @@ export default async function About() {
       <section className="">
         <div className="relative py-12 lg:py-48 items-center">
           <div className="relative flex items-center px-12 justify-center h-full z-20">
-            <h1 className="text-center text-3xl md:text-5xl text-black font-bold plexSans">
-              What is the Behna Cinema Archive?
-            </h1>
+            <div>
+              <h1 className="text-center text-3xl md:text-5xl text-black font-bold plexSans mb-2">
+                History of the Behna Cinema Archive
+              </h1>
+              <div className="flex justify-center">
+                <span className="text-xl font-bold  m-0 text-gray-500 font-ibmSans">
+                  by Wekalet Behna
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -36,7 +43,7 @@ export default async function About() {
               In the 1920s, Alexandria saw the founding of Sélections Behna
               Films by three brothers, Edouard, Michel and George Behna, just as
               the city was becoming a centre for Egypt&#8217;s burgeoning film
-              industry. An historic centre of scholarship, trade, and culture
+              industry. An historic centre of scholarship, trade and culture
               since the Ptolemaic dynasty, Alexandria regained its status as the
               pride of the Mediterranean and a hub for the arts following a
               cultural renaissance in the 19th century. This thriving trading
@@ -45,7 +52,7 @@ export default async function About() {
             </p>
             <p className="py-2 font-ibmSans">
               In 1932, the Behna brothers co-produced &#8216;Onshoudat
-              al-Fouad&#8217;, with Nahas Sphynx Film, the first Egyptian
+              Al Fouad&#8217;, with Nahas Sphynx Film, the first Egyptian
               musical film, and in 1936, they launched into film distribution
               and distributed in the same year the first Egyptian animated film
               &#8216;Mish Mish Effendi,&#8217; before transitioning to film
@@ -53,8 +60,8 @@ export default async function About() {
               Egyptian films in the Arab world, with offices in Alexandria,
               Cairo, Baghdad, Khartoum, Beirut and Damascus. Sélections Behna
               Films participated in many iconic films in the history of Egyptian
-              cinema, including works by Assia Dagher, Marie-Queen, Ahmed Galal, comedy
-              icon Ismail Yassin and composer-actor Mohamed Fawzi.
+              cinema, including works by Assia Dagher, Marie-Queen, Ahmed Galal,
+              comedy icon Ismail Yassin and composer-actor Mohamed Fawzi.
             </p>
             <p className="py-2 font-ibmSans">
               Following the 1952 revolution and the widespread campaign of
@@ -106,13 +113,16 @@ export default async function About() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-1 md:gap-12= md:align-top">
           <div className="text-column">
-            <h2 className="text-3xl font-bold m-0 text-gray-900 font-ibmSans mb-2">
-              <span> Digitising the golden era of Egyptian cinema</span>
-              <br></br>
-              <span className="text-xl  m-0 text-gray-500 font-ibmSans">
-                by the ARCHiVe team at the Cini and Factum Foundation
+            <div className="flex flex-col items-center my-8">
+              <h2 className="text-3xl text-center md:text-5xl font-bold m-0 text-gray-900 font-ibmSans mb-2">
+                Digitising the golden era of Egyptian cinema
+              </h2>
+              <div className="text-center ">
+              <span className="text-xl font-bold  m-0 text-gray-500 font-ibmSans">
+                by Fondazione Giorgio Cini <br></br>and Factum Foundation
               </span>
-            </h2>
+              </div>
+            </div>
 
             {/* <h2 className="text-3xl font-bold mb-4 text-gray-900 font-ibmSans">
         What are Behna Archives?
@@ -130,7 +140,7 @@ export default async function About() {
               Our joint effort aimed to record, preserve, and disseminate the
               valuable Behna Archive. The first step involved a training
               workshop in Alexandria, conducted by two members of Factum
-              Foundation. Our goal was to share methodologies, techniques, and
+              Foundation. Our goal was to share methodologies, techniques and
               best practices with Behna&rsquo;s team to digitally record the
               archive accurately.
             </p>
