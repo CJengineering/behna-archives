@@ -212,14 +212,14 @@ async function CollectionItemDesktop({ slug }: CollectionItemProps) {
         (product?.height && product?.height !== "N/A") ? (
           <>
             <p className="text-sm text-gray-500 font-ibmMono">DIMENSIONS</p>
-            {product?.width && product?.width !== "N/A" && (
+            {product?.height && product?.height !== "N/A" && (
               <p className="text-base text-gray-900 font-ibmSans">
-                L {product?.width}cm
+                L {product?.height}cm
               </p>
             )}
-            {product?.height && product?.height !== "N/A" && (
+            {product?.width && product?.width !== "N/A" && (
               <p className="text-base text-gray-900 font-ibmSans mb-4">
-                W {product?.height}cm
+                W {product?.width}cm
               </p>
             )}
           </>
