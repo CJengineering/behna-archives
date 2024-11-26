@@ -34,7 +34,7 @@ body {
 .poster-container {
   position: relative;
   display: flex;
-  justify-content: start;
+  justify-content: end;
   align-items: flex-start;
   height: 94vh;
  

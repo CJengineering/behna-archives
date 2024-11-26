@@ -1,9 +1,14 @@
 "use client";
 
 import React, { useState } from "react";
+import { RotatingLines } from "react-loader-spinner";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/16/solid";
+import {
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  XMarkIcon,
+} from "@heroicons/react/16/solid";
 interface MainImageCompProps {
   productImage: string;
   productAlt: string;
@@ -18,19 +23,25 @@ export default function MainImageComp({
   linkNext,
 }: MainImageCompProps) {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   return (
     <div className=" ">
-        
       {!isLoaded && (
-        <div className="h-96 w-full flex items-center justify-center">
-          <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-slate-500 border-solid"></div>
+        <div className="flex justify-center items-center h-[50vh] ">
+          <RotatingLines
+            strokeColor="#000"
+            strokeWidth="5"
+            animationDuration="1"
+            width="50"
+          ></RotatingLines>
         </div>
       )}
 
       <Image
         src={productImage}
         alt={productAlt}
-        className="poster  transition-opacity opacity-0 duration-[1s] ease-in-out"
+        className="poster  transition-opacity opacity-0 duration-[1s] hover:cursor-pointer ease-in-out"
+        onClick={() => setIsLightboxOpen(true)}
         onLoad={(e: any) => {
           e.target.classList.remove("opacity-0");
           setIsLoaded(true);
@@ -52,6 +63,25 @@ export default function MainImageComp({
           >
             <ChevronRightIcon className="h-6 w-6" />
           </Link>
+        </div>
+      )}
+      {isLightboxOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-90 flex justify-center hover:cursor-pointer items-center z-50"
+          onClick={() => setIsLightboxOpen(false)} // Close lightbox when clicking on background
+        >
+          <div
+            className="relative"
+            onClick={(e) => e.stopPropagation()} // Prevent closing lightbox when clicking on the image
+          >
+            <Image
+              src={productImage}
+              alt={productAlt}
+              width={800}
+              height={800}
+              className="max-h-[80vh] w-full"
+            />
+          </div>
         </div>
       )}
     </div>

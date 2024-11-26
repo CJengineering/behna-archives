@@ -13,7 +13,7 @@ export default async function About() {
   return (
     <div>
       <section className="">
-        <div className="relative py-12 lg:py-48 items-center">
+        <div className="relative py-12 lg:py-24 items-center">
           <div className="relative flex items-center px-12 justify-center h-full z-20">
             <div>
               <h1 className="text-center text-3xl md:text-5xl text-black font-bold plexSans mb-2">
@@ -29,12 +29,19 @@ export default async function About() {
         </div>
       </section>
 
-      <section className="px-4 max-w-[1700px] mx-auto pb-12">
-        <div className="grid grid-cols-1 pr-4 pl-4 lg:pl-0 md:grid-cols-2 md:gap-12 md:align-top">
+      <section className="px-4 max-w-[1080px] mx-auto pb-6">
+        <div className="grid grid-cols-1 pr-4 pl-4 lg:pl-0 md:grid-cols-1 md:gap-12 md:align-top">
           <div className="text-column">
             {/* <h2 className="text-3xl font-bold mb-4 text-gray-900 font-ibmSans">
         What are Behna Archives?
       </h2> */}
+       <div className="column-image hidden md:block">
+          <img
+            src="https://storage.googleapis.com/behna-archives/267_GS_1955_For%20the%20Sake%20of%20Love.webp"
+            alt=""
+            className="self-end"
+          />
+        </div>
             <p className="py-2 font-ibmSans">
               Moving images captivated the world in the early 1900s, marking the
               emergence of cinema as a global cultural phenomenon.
@@ -92,25 +99,25 @@ export default async function About() {
             </p>
             <div className="w-auto"></div>
           </div>
-          <div className="column-image hidden md:block md:align-top">
+          {/* <div className="column-image hidden md:block md:align-top">
             <img
               src="https://storage.googleapis.com/behna-archives/3_AAMTFC_1948_A%20girl%20from%20Palestine.webp"
               alt=""
               className="self-end"
             />
-          </div>
+          </div> */}
         </div>
         <div className="px-24 border-b border-gray-300 py-6"></div>
       </section>
 
-      <section className="px-4 md:max-w-[1700px] mx-auto pb-12">
-        <div className="column-image hidden md:block">
+      <section className="px-4 md:max-w-[1080px] mx-auto pb-12">
+        {/* <div className="column-image hidden md:block">
           <img
             src="https://storage.googleapis.com/behna-archives/267_GS_1955_For%20the%20Sake%20of%20Love.webp"
             alt=""
             className="self-end"
           />
-        </div>
+        </div> */}
         <div className="grid grid-cols-1 md:grid-cols-1 md:gap-12= md:align-top">
           <div className="text-column">
             <div className="flex flex-col items-center my-8">
@@ -192,7 +199,7 @@ export default async function About() {
         <div className="border-b border-gray-300 py-6"></div>
       </section>
 
-      <section className="px-4 md:max-w-[1700px] mx-auto pb-24 font-ibmMono">
+      <section className="px-4 md:max-w-[1080px] mx-auto pb-24 font-ibmMono">
         <h2 className="text-3xl font-bold m-0 text-gray-900 font-ibmSans mb-4">
           Supported by
         </h2>

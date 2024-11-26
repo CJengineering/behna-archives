@@ -29,12 +29,12 @@ const Navbar = () => {
   const pathname = usePathname()
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className={`text-white w-full ${pathname === '/' ? 'bg-slate-900' : 'bg-slate-900'}`}>
-    <div className="max-w-full mx-auto px-4">
+    <div className={`text-white  w-full ${pathname === '/' ? 'bg-slate-900' : 'bg-slate-900'}`}>
+    <div className="max-w-full mx-auto px-4 ">
       <div className="flex justify-between items-center py-6 md:justify-start md:space-x-10">
         <div className="flex justify-start lg:w-0 lg:flex-1">
           <a href="/" className="flex">
-          
+            {/* <Image src={logoBehna} alt="Behna Cinema Archive" width={25} height={25} /> */}
             <span className="px-2 plexMono">BEHNA CINEMA ARCHIVE</span>
           </a>
         </div>

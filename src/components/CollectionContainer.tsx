@@ -45,7 +45,7 @@ export default async function CollectionContainer() {
       {/* Gradient background with slow transition */}
       <div className="absolute inset-0 bg-blue-900 opacity-0 group-hover:opacity-25 transition-opacity duration-[2000ms] ease-in-out pointer-events-none"></div>
     </div>
-                <div className="mt-1 flex justify-between items-center text-sm font-medium text-black-900 md:text-base">
+                <div className="mt-1 flex justify-between  text-sm font-medium text-black-900 md:text-base">
                   <h3 className="font-ibmSans">{product.name}</h3>
                   <p className="font-ibmSans">{product.price}</p>
                 </div>
