@@ -73,10 +73,10 @@ async function CollectionItemDesktop({ slug }: CollectionItemProps) {
   console.log(relatedProducts, product);
 
   return (
-    <div className="hidden  lg:max-w-[1080px] xl:max-w-[980px]  2xl:max-w-[980px] max-h-[100dvh] mx-auto md:px-4 md:grid md:pb-6 md:grid-cols-2 md:gap-4">
+    <div className="hidden  lg:max-w-[1080px] xl:max-w-[1080px]  2xl:max-w-[1260px] max-h-[100dvh] mx-auto md:px-4 md:grid md:pb-6 md:grid-cols-12 md:gap-4">
       {/* Image Section */}
 
-      <div className="poster-container ">
+      <div className="poster-container md:col-span-5 ">
         <div className=" ">
           <nav aria-label="Breadcrumb">
             <ol role="list" className="flex items-center py-6">
@@ -127,7 +127,7 @@ async function CollectionItemDesktop({ slug }: CollectionItemProps) {
       </div>
 
       {/* Text Section */}
-      <div className="px-4 pt-16 flex flex-col h-[100dvh] overflow-y-scroll">
+      <div className="px-4 pt-16 flex flex-col h-[100dvh] md:col-span-7 overflow-y-scroll">
         <h1 className="text-4xl font-bold text-gray-900 font-ibmSans">
           {product?.name}
         </h1>

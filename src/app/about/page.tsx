@@ -13,7 +13,7 @@ export default async function About() {
   return (
     <div>
       <section className="">
-        <div className="relative py-12 lg:py-24 items-center">
+        <div className="relative py-12 lg:py-8 items-center">
           <div className="relative flex items-center px-12 justify-center h-full z-20">
             <div>
               <h1 className="text-center text-3xl md:text-5xl text-black font-bold plexSans mb-2">

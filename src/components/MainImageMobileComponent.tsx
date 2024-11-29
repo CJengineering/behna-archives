@@ -34,7 +34,7 @@ export default function MainImageMobileComponent({
           </div>
         )}
 
-        {isLoaded && (
+        {/* {isLoaded && (
           <Link
             href={`${linkNext}`}
             className="w-12 opacity-0 transition-opacity duration-200 ease-in-out absolute right-0 bottom-1/2 pr-3"
@@ -51,7 +51,7 @@ export default function MainImageMobileComponent({
           >
             <ChevronLeftIcon className="w-12" />
           </Link>
-        )}
+        )} */}
 
         <Image
           src={productImage}
@@ -67,19 +67,21 @@ export default function MainImageMobileComponent({
         />
       </div>
       {isLoaded && (
-        <div className="flex py-3 space-x-0">
-          <Link
-            href={`${linkPrevious}`}
-            className="h-12 w-12 mr-3 flex justify-center items-center bg-black text-white"
-          >
-            <ChevronLeftIcon className="h-6 w-6" />
-          </Link>
-          <Link
-            href={`${linkNext}`}
-            className="h-12 w-12 flex justify-center items-center bg-black text-white"
-          >
-            <ChevronRightIcon className="h-6 w-6" />
-          </Link>
+        <div className="b flex justify-end px-3">
+          <div className="flex py-3 space-x-0">
+            <Link
+              href={`${linkPrevious}`}
+              className="h-12 w-12 mr-3 flex justify-center items-center bg-black text-white"
+            >
+              <ChevronLeftIcon className="h-6 w-6" />
+            </Link>
+            <Link
+              href={`${linkNext}`}
+              className="h-12 w-12 flex justify-center items-center bg-black text-white"
+            >
+              <ChevronRightIcon className="h-6 w-6" />
+            </Link>
+          </div>
         </div>
       )}
       {isLightboxOpen && (
@@ -89,7 +91,7 @@ export default function MainImageMobileComponent({
         >
           <div
             className="relative"
-            onClick={(e) => e.stopPropagation()} // Prevent closing lightbox when clicking on the image
+            // onClick={(e) => e.stopPropagation()} // Prevent closing lightbox when clicking on the image
           >
             <Image
               src={productImage}
