@@ -39,6 +39,10 @@ body {
   height: 94vh;
  
 }
+.poster-container a {
+ text-decoration: underline;
+ 
+}
 .plexMono {
   font-family: var(--font-ibm-plex-mono)
 }

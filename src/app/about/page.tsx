@@ -14,12 +14,12 @@ export default async function About() {
     <div>
       <section className="">
         <div className="relative py-12 lg:py-8 items-center">
-          <div className="relative flex items-center px-12 justify-center h-full z-20">
+          <div className="relative flex items-center justify-start mx-auto px-4 max-w-[1080px] h-full z-20">
             <div>
-              <h1 className="text-center text-3xl md:text-5xl text-black font-bold plexSans mb-2">
+              <h1 className="text-left  text-3xl md:text-5xl text-black font-bold plexSans mb-2">
                 History of the Behna Cinema Archive
               </h1>
-              <div className="flex justify-center">
+              <div className="flex justify-start">
                 <span className="text-xl font-bold  m-0 text-gray-500 font-ibmSans">
                   by Wekalet Behna
                 </span>
@@ -119,12 +119,12 @@ export default async function About() {
           />
         </div> */}
         <div className="grid grid-cols-1 md:grid-cols-1 md:gap-12= md:align-top">
-          <div className="text-column">
-            <div className="flex flex-col items-center my-8">
-              <h2 className="text-3xl text-center md:text-5xl font-bold m-0 text-gray-900 font-ibmSans mb-2">
+          <div className="text-column ">
+            <div className="flex flex-col items-start  my-8">
+              <h2 className="text-3xl text-center md:text-5xl  font-bold m-0 text-gray-900  font-ibmSans mb-2">
                 Digitising the golden era of Egyptian cinema
               </h2>
-              <div className="text-center ">
+              <div className="text-start ">
               <span className="text-xl font-bold  m-0 text-gray-500 font-ibmSans">
                 by Fondazione Giorgio Cini <br></br>and Factum Foundation
               </span>
