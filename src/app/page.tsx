@@ -79,10 +79,10 @@ export default async function Home() {
         </div>
       </section>
       <section className=" mx-auto">
-        <div className=" py-8 flex justify-center align-middle">
+        <div className=" py-16 flex justify-center align-middle">
           <Link
             href={"/collection"}
-            className="inline-flex items-center gap-x-2 mt-4 rounded-md plexMono bg-black px-6 py-4 text-sm text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+            className="inline-flex items-center gap-x-2 mt-8 rounded-md plexMono bg-black px-6 py-4 text-sm text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
           >
             <EyeIcon className="-mr-0.5 h-5 w-5" aria-hidden="true" />
             <span>Explore</span>
@@ -90,8 +90,8 @@ export default async function Home() {
         </div>
       </section>
       <section className="max-w-[1700px] mx-auto">
-        <div className="mx-4 px-24 border-b border-gray-300"></div>
-        <div className="grid grid-cols-1 px-4 lg:px-4 py-12 md:grid-cols-2 gap-4">
+        <div className="mx-4 px-24  border-b  border-gray-300"></div>
+        <div className="grid grid-cols-1 px-4 lg:px-4 py-24 md:grid-cols-2 gap-4">
           <div className="text-column">
             <h2 className="text-3xl font-bold m-0 text-gray-900 font-ibmSans md:pb-2">
               What is the Behna Cinema Archive?

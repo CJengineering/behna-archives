@@ -53,13 +53,13 @@ export default function MainImageComp({
         <div className="flex py-3 space-x-0">
           <Link
             href={`${linkPrevious}`}
-            className="h-12 w-12 mr-3 flex justify-center items-center bg-black text-white"
+            className="h-12 w-12 mr-3 border flex justify-center items-center bg-white text-black"
           >
             <ChevronLeftIcon className="h-6 w-6" />
           </Link>
           <Link
             href={`${linkNext}`}
-            className="h-12 w-12 flex justify-center items-center bg-black text-white"
+            className="h-12 w-12 border flex justify-center items-center bg-white text-black"
           >
             <ChevronRightIcon className="h-6 w-6" />
           </Link>

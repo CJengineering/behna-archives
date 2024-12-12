@@ -132,6 +132,14 @@ async function CollectionItemDesktop({ slug }: CollectionItemProps) {
           {product?.name}
         </h1>
         <div className="my-4 border-b border-gray-300"></div>
+        {product?.yearProduced && product?.yearProduced !== "N/A" && (
+          <>
+            <p className="text-sm text-gray-500 font-ibmMono">ORIGINAL TITLE</p>
+            <p className="text-base text-gray-900 plexSans mb-4">
+             {product?.arabicTitle && product?.arabicTitle !== "N/A" ? product?.arabicTitle :""}
+            </p>
+          </>
+        )}
 
         {product?.yearProduced && product?.yearProduced !== "N/A" && (
           <>
@@ -213,14 +221,15 @@ async function CollectionItemDesktop({ slug }: CollectionItemProps) {
           <>
             <p className="text-sm text-gray-500 font-ibmMono">DIMENSIONS</p>
             {product?.width && product?.width !== "N/A" && (
-              <p className="text-base text-gray-900 font-ibmSans">
-                L {product?.width}cm
-              </p>
+        
+                   <p className="text-base text-gray-900 font-ibmSans ">
+                   W {product?.width} cm
+                 </p>
             )}
             {product?.height && product?.height !== "N/A" && (
-              <p className="text-base text-gray-900 font-ibmSans mb-4">
-                W {product?.height}cm
-              </p>
+               <p className="text-base text-gray-900 font-ibmSan mb-4">
+               L {product?.height} cm
+             </p>
             )}
           </>
         ) : null}

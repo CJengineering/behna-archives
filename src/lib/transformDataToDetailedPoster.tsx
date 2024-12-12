@@ -7,10 +7,12 @@ export const transformDataToDetailedPoster = (
     return null; // Return null or throw an error, depending on your error handling strategy
   }
   const year = record.fields["Production year"] || "N/A";
+  const arabicTitle = record.fields["Title (Arabic) (from Title (Arabic))"] || "N/A";
   const width = record.fields["Width (cm)"] || "N/A";
   const height = record.fields["Height (cm)"] || "N/A";
   return {
     id: record.fields.ID,
+    arabicTitle: arabicTitle,
     name: record.fields["Title (English)"]?.[0] || "",
     imageUrl: record.fields["Full image URL"] || "#",
     yearProduced: record.fields["Production year"] || "N/A",

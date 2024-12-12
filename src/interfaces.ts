@@ -52,6 +52,7 @@ export interface Image {
 export interface Poster {
   id: string;
   synopsis: string;
+  arabicTitle: string;
   name: string;
   productionCompany?: string;
   yearProduced?: string;
